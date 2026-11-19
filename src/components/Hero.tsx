@@ -20,7 +20,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
-  const [activeTab, setActiveTab] = useState<'channels' | 'ocr' | 'filters'>('channels');
+  const [activeTab, setActiveTab] = useState<'channels' | 'extract' | 'filters'>('channels');
 
   return (
     <section
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             <div style={{ marginBottom: '1.35rem' }}>
               <div className="badge-pill">
                 <Sparkles size={14} />
-                <span>Desarrollado por HelpCopies SRL · SFTP, Email, WhatsApp, Telegram & API ERP</span>
+                <span>HelpCopies SRL · Automatización Documental para Empresas</span>
               </div>
             </div>
 
@@ -80,8 +80,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 color: 'var(--text-main)',
               }}
             >
-              Digitalización Inteligente con{' '}
-              <span className="gradient-text-tech">OCR e IA en Base de Datos</span>
+              Simplifica la Gestión de{' '}
+              <span className="gradient-text-tech">Facturas, Remitos y Comprobantes</span>
             </h1>
 
             <p
@@ -92,10 +92,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 marginBottom: '2rem',
               }}
             >
-              Con <strong>Help Scan</strong> centraliza todos los comprobantes de tu empresa ingresados desde{' '}
-              <strong>impresoras HP por SFTP</strong>, <strong>Correo Electrónico</strong>,{' '}
-              <strong>WhatsApp</strong>, <strong>Telegram</strong> o tu <strong>ERP mediante API</strong>.
-              Nuestro motor OCR + IA extrae y guarda cada dato en base de datos para consultarlos al instante mediante filtros avanzados.
+              Con <strong>Help Scan</strong> olvídate de descargar archivos o cargar comprobantes a mano.
+              Recibe documentos automáticamente desde tus <strong>impresoras HP</strong>, <strong>Correo Electrónico</strong>,{' '}
+              <strong>WhatsApp</strong>, <strong>Telegram</strong> o tu <strong>ERP mediante API</strong>. Organizamos toda la información al instante para que la encuentres y controles en segundos.
             </p>
 
             {/* Botones de Acción */}
@@ -140,10 +139,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 <CheckCircle2 size={16} color="var(--color-primary)" /> Sin tarjeta de crédito
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <CheckCircle2 size={16} color="var(--color-primary)" /> Hardware HP + Soporte HelpCopies SRL
+                <CheckCircle2 size={16} color="var(--color-primary)" /> Hardware HP + Servicio HelpCopies SRL
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <CheckCircle2 size={16} color="var(--color-secondary)" /> Cifrado AES-256-GCM
+                <CheckCircle2 size={16} color="var(--color-secondary)" /> Puesta en marcha inmediata
               </span>
             </div>
           </div>
@@ -153,13 +152,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             <ImageSlot
               slotLabel="Banner Principal · Espacio para Imagen"
               recommendedSize="1200 × 900 px"
-              suggestionText="Aquí podrás colocar una foto de tus equipos HP LaserJet Enterprise, oficina digitalizada o captura del sistema Help Scan."
+              suggestionText="Aquí podrás colocar una foto de tus equipos HP LaserJet Enterprise, oficina digitalizada o captura del portal Help Scan."
               minHeight="440px"
               showLaserBeam
               topLeftBadge={
                 <>
                   <span className="live-dot" />
-                  <span>SFTP · Email · WhatsApp · Telegram · API ERP</span>
+                  <span>Impresoras HP · Email · WhatsApp · Telegram · ERP</span>
                 </>
               }
               bottomRightCard={
@@ -182,7 +181,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                         letterSpacing: '0.04em',
                       }}
                     >
-                      ✔ Indexado en PostgreSQL
+                      ✔ Comprobante Organizado
                     </span>
                     <span
                       style={{
@@ -194,7 +193,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                         color: 'var(--color-secondary)',
                       }}
                     >
-                      99.8% IA
+                      Listo para pagar
                     </span>
                   </div>
                   <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-main)' }}>
@@ -209,7 +208,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
           </div>
         </div>
 
-        {/* Simulador Interactivo del Flujo en Tiempo Real */}
+        {/* Simulador Interactivo orientado a Procesos */}
         <div style={{ maxWidth: '1040px', margin: '0 auto' }}>
           <div
             className="light-card"
@@ -238,7 +237,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#f59e0b' }} />
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: 'var(--color-primary)' }} />
                 <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginLeft: '0.5rem', fontWeight: 600 }}>
-                  Flujo Inteligente Help Scan · HelpCopies SRL
+                  Así agiliza tu día a día · Help Scan
                 </span>
               </div>
 
@@ -253,15 +252,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 }}
               >
                 {[
-                  { id: 'channels', label: '1. Canales de Ingreso' },
-                  { id: 'ocr', label: '2. OCR + IA a Base de Datos' },
-                  { id: 'filters', label: '3. Filtros y Consulta ERP' },
+                  { id: 'channels', label: '1. Recepción Automática' },
+                  { id: 'extract', label: '2. Lectura sin Tipeo' },
+                  { id: 'filters', label: '3. Búsqueda y ERP' },
                 ].map((tab) => {
                   const active = activeTab === tab.id;
                   return (
                     <button
                       key={tab.id}
-                      onClick={() => setActiveTab(tab.id as 'channels' | 'ocr' | 'filters')}
+                      onClick={() => setActiveTab(tab.id as 'channels' | 'extract' | 'filters')}
                       style={{
                         fontSize: '0.8125rem',
                         padding: '0.45rem 0.9rem',
@@ -280,7 +279,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
               </div>
             </div>
 
-            {/* Panel 1: Multi-Canal (SFTP, Email, WhatsApp, Telegram, ERP API) */}
+            {/* Panel 1: Recepción Automática Omnicanal */}
             {activeTab === 'channels' && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
                 <div
@@ -297,23 +296,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                     </div>
                     <div>
                       <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                        Recepción Omnicanal Automática
+                        Todos tus Canales Conectados
                       </h4>
                       <p style={{ fontSize: '0.75rem', color: 'var(--color-primary)', fontWeight: 700 }}>
-                        ● Impresoras HP SFTP · Email · WhatsApp · Telegram · API
+                        ● Sin descargas ni archivos perdidos
                       </p>
                     </div>
                   </div>
                   <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    Escanea desde equipos HP, recibe facturas por correo IMAP, captura remitos desde WhatsApp / Telegram o envía comprobantes desde sistemas ERP por API.
+                    Escanea un papel en tu impresora HP, recibe una factura por correo, saca una foto por WhatsApp o Telegram, o envía documentos desde tu sistema actual.
                   </p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
                     {[
-                      { icon: <Printer size={13} />, label: 'SFTP HP' },
-                      { icon: <Mail size={13} />, label: 'Email IMAP' },
+                      { icon: <Printer size={13} />, label: 'Impresoras HP' },
+                      { icon: <Mail size={13} />, label: 'Correo Email' },
                       { icon: <MessageCircle size={13} />, label: 'WhatsApp' },
                       { icon: <Send size={13} />, label: 'Telegram' },
-                      { icon: <Webhook size={13} />, label: 'ERP API' },
+                      { icon: <Webhook size={13} />, label: 'API ERP' },
                     ].map((ch, idx) => (
                       <span
                         key={idx}
@@ -350,34 +349,35 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                     </div>
                     <div>
                       <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                        Bóveda Cifrada AES-256-GCM
+                        Archivo Seguro y Centralizado
                       </h4>
                       <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                        Aislamiento Multi-Tenant por Compañía
+                        Acceso privado exclusivo para tu empresa
                       </p>
                     </div>
                   </div>
                   <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    Cada comprobante ingresado pasa verificación binaria y hash SHA-256 anti-duplicados, quedando resguardado con clave exclusiva por empresa en el servidor.
+                    Olvídate de buscar comprobantes en distintos correos, teléfonos o carpetas compartidas. Todo queda resguardado en un único portal ordenado y sin duplicados.
                   </p>
                   <div
                     style={{
                       padding: '0.75rem',
-                      backgroundColor: '#0f172a',
+                      backgroundColor: 'var(--color-accent-soft)',
+                      border: '1px solid rgba(16, 185, 129, 0.25)',
                       borderRadius: '0.55rem',
-                      fontSize: '0.75rem',
-                      fontFamily: 'var(--font-mono)',
-                      color: '#48b85f',
+                      fontSize: '0.78rem',
+                      color: '#059669',
+                      fontWeight: 600,
                     }}
                   >
-                    [HELP-SCAN] ✔ PDF cifrado en /vault/2026/11/ (AES-256-GCM)
+                    ✓ Factura recibida, verificada y disponible para tu equipo al instante.
                   </div>
                 </div>
               </div>
             )}
 
-            {/* Panel 2: OCR + IA estructurando en Base de Datos */}
-            {activeTab === 'ocr' && (
+            {/* Panel 2: Lectura automática sin tipeo manual */}
+            {activeTab === 'extract' && (
               <div
                 style={{
                   backgroundColor: 'var(--bg-subtle)',
@@ -399,16 +399,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
                     <Cpu size={20} color="var(--color-secondary)" />
                     <span style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                      Procesamiento OCR + IA guardado en Base de Datos PostgreSQL
+                      Cada dato clave extraído automáticamente, sin cargar nada a mano
                     </span>
                   </div>
-                  <span className="badge-pill badge-emerald">Precisión OCR + IA: 99.8%</span>
+                  <span className="badge-pill badge-emerald">Ahorra horas de carga administrativa</span>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1rem' }}>
                   {[
-                    { label: 'Tipo y Letra', value: 'Factura A · 0001-00048291', color: 'var(--text-main)' },
-                    { label: 'Emisor / Proveedor', value: 'Acme Argentina S.A.', color: 'var(--text-main)' },
-                    { label: 'CUIT & CAE AFIP', value: '30-71458921-9 · CAE OK', color: 'var(--color-secondary)' },
+                    { label: 'Comprobante', value: 'Factura A · 0001-00048291', color: 'var(--text-main)' },
+                    { label: 'Proveedor', value: 'Acme Argentina S.A.', color: 'var(--text-main)' },
+                    { label: 'CUIT & Vencimiento', value: '30-71458921-9 · 15/11/2026', color: 'var(--color-secondary)' },
                     { label: 'Orden de Compra / Total', value: 'OC-4819 · $ 145.200,00', color: 'var(--color-primary)' },
                   ].map((item, idx) => (
                     <div
@@ -433,7 +433,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
               </div>
             )}
 
-            {/* Panel 3: Búsqueda por Filtros Avanzados y API ERP */}
+            {/* Panel 3: Búsqueda por Filtros y Conexión ERP */}
             {activeTab === 'filters' && (
               <div
                 style={{
@@ -443,7 +443,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                   border: '1px solid var(--border-color)',
                 }}
               >
-                {/* Barra simulada de Filtros */}
                 <div
                   style={{
                     display: 'flex',
@@ -469,7 +468,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                         color: 'var(--text-main)',
                       }}
                     >
-                      <Search size={14} color="var(--color-primary)" /> CUIT: 30-71458921-9
+                      <Search size={14} color="var(--color-primary)" /> Proveedor o CUIT
                     </span>
                     <span
                       style={{
@@ -510,38 +509,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                         color: 'var(--text-secondary)',
                       }}
                     >
-                      Origen: Email / SFTP
+                      Fecha: Este mes
                     </span>
                   </div>
                   <span
                     style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.72rem',
-                      padding: '0.3rem 0.6rem',
+                      fontSize: '0.74rem',
+                      fontWeight: 700,
+                      padding: '0.3rem 0.7rem',
                       borderRadius: '0.4rem',
-                      backgroundColor: '#0f172a',
-                      color: '#38bdf8',
+                      backgroundColor: 'var(--color-secondary-soft)',
+                      color: 'var(--color-secondary)',
                     }}
                   >
-                    GET /api/documents · ERP Ready
+                    Integrable con tu ERP vía API
                   </span>
                 </div>
 
-                {/* Filas de resultados filtrados */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {[
                     {
                       file: 'Factura_A_0001_00048291.pdf',
-                      origin: 'Email IMAP',
+                      origin: 'Recibida por Email',
                       oc: 'OC-4819',
                       amount: '$ 145.200,00 ARS',
                       status: 'Validado',
                     },
                     {
                       file: 'Remito_Deposito_Norte_9921.pdf',
-                      origin: 'Escáner HP SFTP',
+                      origin: 'Escáner HP Oficina',
                       oc: 'OC-4819',
-                      amount: '12 ítems indexados',
+                      amount: '12 artículos registrados',
                       status: 'Validado',
                     },
                   ].map((row, idx) => (
@@ -565,7 +563,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                           📄 {row.file}
                         </div>
                         <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
-                          Origen: <strong>{row.origin}</strong> · Ref: {row.oc}
+                          Canal: <strong>{row.origin}</strong> · Ref: {row.oc}
                         </div>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>

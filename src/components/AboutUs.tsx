@@ -22,8 +22,8 @@ export const AboutUs: React.FC = () => {
     },
     {
       value: '99.8%',
-      label: 'Precisión OCR + IA',
-      desc: 'Lectura inteligente de CUITs, CAE, fechas e importes',
+      label: 'Precisión Automática',
+      desc: 'Lectura exacta de CUITs, vencimientos, fechas e importes',
       color: 'var(--color-accent)',
       softBg: 'var(--color-accent-soft)',
       icon: <Cpu size={22} color="var(--color-accent)" />,
@@ -44,12 +44,12 @@ export const AboutUs: React.FC = () => {
       desc: 'Sin necesidad de comprar costosos equipos de digitalización. Te instalamos hardware HP LaserJet y ScanJet de alta velocidad con insumos y soporte técnico integral.',
     },
     {
-      title: 'Digitalización Autónoma Omnicanal',
-      desc: 'Eliminamos las tareas manuales de descarga y renombrado. Cada hoja escaneada por SFTP o recibida por correo IMAP, WhatsApp, Telegram o API ERP se analiza y clasifica automáticamente.',
+      title: 'Recepción Automática desde Cualquier Canal',
+      desc: 'Eliminamos las tareas manuales de descarga y archivo. Cada comprobante escaneado o recibido por correo, WhatsApp, Telegram o tu sistema contable se clasifica al instante.',
     },
     {
-      title: 'Bóveda Cifrada e Indexada AES-256',
-      desc: 'Tus documentos dejan de ser archivos sueltos en carpetas: pasan a ser registros fiscales estructurados en base de datos listos para auditar y filtrar.',
+      title: 'Archivo Empresarial Seguro y Ordenado',
+      desc: 'Tus documentos dejan de ser archivos sueltos en carpetas: pasan a estar organizados por proveedor, fecha e importe, listos para filtrar y aprobar.',
     },
   ];
 
@@ -76,7 +76,7 @@ export const AboutUs: React.FC = () => {
               src="/images/Help-Copies-con-fondo-blanco.png"
               alt="HelpCopies SRL"
               style={{
-                height: '1.18em',
+                height: '4em',
                 width: 'auto',
                 display: 'inline-block',
                 verticalAlign: 'middle',
@@ -163,7 +163,7 @@ export const AboutUs: React.FC = () => {
               ¿Por qué conformarte con un escáner común si puedes automatizar toda tu administración?
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.75rem', lineHeight: 1.65 }}>
-              Los escáneres tradicionales solo guardan PDFs mudos en carpetas compartidas. Con <strong>Help Scan de HelpCopies SRL</strong>, cada comprobante que entra por la bandeja HP, correo o mensajería queda clasificado en base de datos por tipo, fecha, CUIT, orden de compra e importes listos para filtrar o exportar a tu ERP.
+              Los escáneres tradicionales solo guardan archivos mudos en carpetas compartidas. Con <strong>Help Scan de HelpCopies SRL</strong>, cada comprobante que entra por tu impresora HP, correo o mensajería queda clasificado por tipo, fecha, CUIT, orden de compra e importes, listo para buscar o exportar a tu ERP.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
               {pillars.map((pillar, i) => (

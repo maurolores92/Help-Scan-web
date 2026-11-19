@@ -80,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
                 whiteSpace: 'nowrap',
               }}
             >
-              AI + OCR
+              CLOUD
             </span>
           </div>
           <p style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', margin: 0, fontWeight: 500 }}>

@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
               />
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1rem' }}>
-              Solución integral de digitalización documental por SFTP, Email, WhatsApp, Telegram y API ERP con procesamiento OCR e IA.
+              Solución integral de digitalización y automatización documental desde equipos HP, Email, WhatsApp, Telegram y tu ERP.
             </p>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
               Un producto de <strong>HelpCopies SRL</strong>
@@ -82,13 +82,13 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Compatibilidad con HP Enterprise</span>
+                <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Equipos HP en Comodato</span>
               </li>
               <li>
-                <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Bóveda Cifrada Multi-Tenant</span>
+                <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Canales Email, WhatsApp y Telegram</span>
               </li>
               <li>
-                <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Google Gemini AI Integrado</span>
+                <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Integración ERP vía API</span>
               </li>
             </ul>
           </div>
@@ -99,11 +99,11 @@ export const Footer: React.FC = () => {
               Compromiso
             </h4>
             <p style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1rem' }}>
-              Todos los datos y archivos PDF están resguardados con cifrado en reposo y aislamiento estricto por compañía.
+              Todos los datos y comprobantes están resguardados con cifrado avanzado y acceso privado exclusivo para tu empresa.
             </p>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.4rem 0.75rem', borderRadius: '0.5rem', backgroundColor: 'rgba(5, 150, 105, 0.1)', border: '1px solid rgba(5, 150, 105, 0.25)', fontSize: '0.75rem', color: 'var(--color-accent)' }}>
               <ShieldCheck size={16} />
-              <span>Conexiones SFTP y SSL seguras</span>
+              <span>Entorno Privado y Conexiones Seguras</span>
             </div>
           </div>
         </div>

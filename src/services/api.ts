@@ -44,7 +44,7 @@ export const FALLBACK_PLANS: PlanDto[] = [
     id: 3,
     name: 'Profesional',
     slug: 'pro',
-    description: 'Plan recomendado para empresas con flujo continuo de PDFs, OCR con IA y filtros avanzados.',
+    description: 'Plan recomendado para empresas con flujo continuo de comprobantes y filtros avanzados.',
     priceMonthly: 148750, // Calculado a partir de US$ 119 * cotización
     currency: 'ARS',
     originalPrice: 119,

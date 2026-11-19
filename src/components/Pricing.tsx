@@ -239,7 +239,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                       <Check size={16} color="var(--color-accent)" strokeWidth={2.5} />
-                      <span><strong>{plan.maxAiQueriesMonthly ? plan.maxAiQueriesMonthly.toLocaleString('es-AR') : 'Ilimitados'}</strong> procesamientos OCR + IA</span>
+                      <span><strong>{plan.maxAiQueriesMonthly ? plan.maxAiQueriesMonthly.toLocaleString('es-AR') : 'Ilimitados'}</strong> procesamientos inteligentes</span>
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                       <Check size={16} color="var(--color-accent)" strokeWidth={2.5} />

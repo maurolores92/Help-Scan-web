@@ -96,7 +96,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenTrial }) => {
               zIndex: 2,
             }}
           >
-            Digitaliza facturas, remitos, órdenes de compra y correos en segundos. Te instalamos el escáner HP o sube tus archivos por SFTP, Email, WhatsApp, Telegram o API ERP para experimentar la extracción OCR + IA.
+            Digitaliza facturas, remitos, órdenes de compra y correos en segundos. Te instalamos el equipo HP o centraliza tus comprobantes desde Email, WhatsApp, Telegram o tu ERP sin carga manual.
           </p>
 
           <div
@@ -142,7 +142,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenTrial }) => {
               zIndex: 2,
             }}
           >
-            ✓ Activación inmediata · Cifrado AES-256 · Cancelación automática sin penalizaciones
+            ✓ Activación inmediata · Resguardo privado · Cancelación automática sin penalizaciones
           </p>
         </div>
       </div>

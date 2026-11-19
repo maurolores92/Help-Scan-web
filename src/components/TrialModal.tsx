@@ -214,7 +214,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose, selecte
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '1.75rem' }}>
               {selectedPlan
                 ? `Plan seleccionado: ${selectedPlan.name}. Activa hoy tus 6 días de acceso sin cargo.`
-                : 'Completa tus datos para activar 6 días de digitalización inteligente con OCR e IA para tu empresa.'}
+                : 'Completa tus datos para activar 6 días de automatización documental para tu empresa.'}
             </p>
 
             {error && (
