@@ -44,7 +44,7 @@ export const FALLBACK_PLANS: PlanDto[] = [
     id: 3,
     name: 'Profesional',
     slug: 'pro',
-    description: 'Plan recomendado para empresas con flujo continuo de PDFs y consultas IA.',
+    description: 'Plan recomendado para empresas con flujo continuo de PDFs, OCR con IA y filtros avanzados.',
     priceMonthly: 148750, // Calculado a partir de US$ 119 * cotización
     currency: 'ARS',
     originalPrice: 119,
@@ -107,7 +107,7 @@ export async function fetchPublicPlans(): Promise<PlanDto[]> {
 
     return FALLBACK_PLANS;
   } catch (err) {
-    console.warn('[HC-Scan Web] Usando planes de contingencia (API no disponible):', err);
+    console.warn('[Help Scan Web] Usando planes de contingencia (API no disponible):', err);
     return FALLBACK_PLANS;
   }
 }

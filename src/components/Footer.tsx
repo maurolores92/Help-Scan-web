@@ -1,14 +1,19 @@
 import React from 'react';
-import { Scan, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
+
+const PORTAL_URL = import.meta.env.VITE_PORTAL_URL || 'http://localhost:3000';
 
 export const Footer: React.FC = () => {
   return (
     <footer
       style={{
         borderTop: '1px solid var(--border-color)',
-        backgroundColor: '#ffffff',
+        backgroundColor: 'rgba(255, 255, 255, 0.86)',
+        backdropFilter: 'blur(8px)',
         padding: '4rem 0 2rem',
         marginTop: '2rem',
+        position: 'relative',
+        zIndex: 1,
       }}
     >
       <div className="container">
@@ -23,28 +28,21 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <div
+              <img
+                src="/images/HelpScan.png"
+                alt="Help Scan por HelpCopies SRL"
                 style={{
-                  width: '2.25rem',
-                  height: '2.25rem',
-                  borderRadius: '0.625rem',
-                  background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  height: '44px',
+                  width: 'auto',
+                  objectFit: 'contain',
                 }}
-              >
-                <Scan size={18} color="#ffffff" strokeWidth={2.5} />
-              </div>
-              <span className="heading-font" style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-main)' }}>
-                HC-Scan
-              </span>
+              />
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1rem' }}>
-              Solución integral de alquiler de hardware HP inteligente con OCR y Asistente de Inteligencia Artificial para empresas.
+              Solución integral de digitalización documental por SFTP, Email, WhatsApp, Telegram y API ERP con procesamiento OCR e IA.
             </p>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-              Una división de <strong>HelpCopies</strong>
+              Un producto de <strong>HelpCopies SRL</strong>
             </span>
           </div>
 
@@ -79,7 +77,7 @@ export const Footer: React.FC = () => {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               <li>
-                <a href="http://localhost:3000/login" style={{ fontSize: '0.875rem', color: 'var(--color-primary)', fontWeight: 600 }}>
+                <a href={`${PORTAL_URL}/login`} style={{ fontSize: '0.875rem', color: 'var(--color-primary)', fontWeight: 600 }}>
                   Acceso a Clientes (Login) &rarr;
                 </a>
               </li>
@@ -125,7 +123,7 @@ export const Footer: React.FC = () => {
           }}
         >
           <div>
-            © {new Date().getFullYear()} <strong>HC-Scan</strong>. Desarrollado con orgullo por <strong>HelpCopies</strong>.
+            © {new Date().getFullYear()} <strong>Help Scan</strong>. Desarrollado por <strong>HelpCopies SRL</strong>.
           </div>
           <div>
             <span>Alquiler inteligente de escaneo y gestión documental empresarial.</span>

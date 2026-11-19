@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Scan, Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
   onOpenTrial: () => void;
 }
+
+const PORTAL_URL = import.meta.env.VITE_PORTAL_URL || 'http://localhost:3000';
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -19,8 +21,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
 
   const navLinks = [
     { label: 'Inicio', href: '#inicio' },
-    { label: 'Quiénes Somos', href: '#nosotros' },
-    { label: 'Por qué elegirnos', href: '#por-que-elegirnos' },
+    { label: 'HelpCopies SRL', href: '#nosotros' },
+    { label: 'Tecnología', href: '#por-que-elegirnos' },
     { label: 'Planes', href: '#planes' },
     { label: 'Contacto', href: '#contacto' },
   ];
@@ -34,63 +36,62 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
         right: 0,
         zIndex: 50,
         transition: 'all 0.3s ease',
-        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.94)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(16px)' : 'none',
-        borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid transparent',
-        boxShadow: scrolled ? 'var(--shadow-sm)' : 'none',
-        padding: scrolled ? '0.75rem 0' : '1.25rem 0',
+        backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.92)' : 'rgba(248, 250, 252, 0.72)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid rgba(15, 23, 42, 0.04)',
+        boxShadow: scrolled ? 'var(--shadow-md)' : 'none',
+        padding: scrolled ? '0.7rem 0' : '1rem 0',
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href="#inicio" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div
+        <a href="#inicio" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+          <img
+            src="/images/logo-sin-fondo.png"
+            alt="Help Scan Logo"
             style={{
-              width: '2.5rem',
-              height: '2.5rem',
-              borderRadius: '0.625rem',
-              backgroundColor: 'var(--color-primary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 4px 12px var(--color-primary-glow)',
+              height: '42px',
+              width: 'auto',
+              objectFit: 'contain',
+              filter: 'drop-shadow(0 3px 8px rgba(50, 160, 72, 0.22))',
             }}
-          >
-            <Scan size={22} color="#ffffff" strokeWidth={2.5} />
-          </div>
+          />
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <span style={{ fontSize: '1.25rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-main)' }}>
-                HC-Scan
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+              <span style={{ fontSize: '1.25rem', fontWeight: 900, letterSpacing: '-0.02em', color: 'var(--text-main)' }}>
+                Help Scan
               </span>
               <span
                 style={{
                   fontSize: '0.625rem',
                   fontWeight: 700,
                   textTransform: 'uppercase',
-                  padding: '0.15rem 0.45rem',
+                  padding: '0.15rem 0.5rem',
                   borderRadius: '9999px',
-                  backgroundColor: 'var(--color-primary-light)',
-                  color: 'var(--color-primary)',
-                  border: '1px solid rgba(37, 99, 235, 0.2)',
+                  backgroundColor: 'var(--color-primary-soft)',
+                  color: 'var(--color-primary-hover)',
+                  border: '1px solid rgba(50, 160, 72, 0.25)',
                 }}
               >
-                IA 2.0
+                AI + OCR
               </span>
             </div>
-            <p style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', margin: 0 }}>por HelpCopies ERP</p>
+            <p style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', margin: 0, fontWeight: 500 }}>
+              por <strong style={{ color: 'var(--text-secondary)' }}>HelpCopies SRL</strong>
+            </p>
           </div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+        <div className="nav-desktop-links">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               style={{
                 fontSize: '0.875rem',
-                fontWeight: 500,
+                fontWeight: 600,
                 color: 'var(--text-secondary)',
                 transition: 'color 0.2s ease',
               }}
@@ -102,35 +103,63 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
           ))}
         </div>
 
-        {/* Right CTA Actions */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        {/* Desktop Right CTA Actions */}
+        <div className="nav-desktop-actions">
           <a
-            href="http://localhost:3000/login"
+            href={`${PORTAL_URL}/login`}
             style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.25rem',
               fontSize: '0.875rem',
-              fontWeight: 500,
+              fontWeight: 600,
               color: 'var(--text-main)',
-              padding: '0.6rem 1rem',
-              borderRadius: '0.5rem',
-              transition: 'background 0.2s',
+              padding: '0.58rem 1rem',
+              borderRadius: '0.625rem',
+              border: '1px solid var(--border-color)',
+              backgroundColor: '#ffffff',
+              transition: 'all 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'var(--bg-subtle)')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = 'var(--color-primary)';
+              e.currentTarget.style.color = 'var(--color-primary)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = 'var(--border-color)';
+              e.currentTarget.style.color = 'var(--text-main)';
+            }}
           >
-            Iniciar Sesión
+            <span>Portal Clientes</span>
+            <ArrowUpRight size={15} />
           </a>
           <button
             onClick={onOpenTrial}
             className="btn-primary"
             style={{
-              padding: '0.6rem 1.25rem',
+              padding: '0.62rem 1.25rem',
               fontSize: '0.875rem',
             }}
           >
-            <Sparkles size={16} />
+            <Sparkles size={15} />
             <span>Prueba 6 días gratis</span>
           </button>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          className="nav-mobile-toggle"
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
+          aria-label="Abrir menú"
+          style={{
+            padding: '0.5rem',
+            borderRadius: '0.5rem',
+            border: '1px solid var(--border-color)',
+            backgroundColor: '#ffffff',
+            color: 'var(--text-main)',
+          }}
+        >
+          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
 
       {/* Mobile Menu Dropdown */}
@@ -151,18 +180,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              style={{ fontSize: '1rem', fontWeight: 500, color: 'var(--text-main)' }}
+              style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-main)' }}
             >
               {link.label}
             </a>
           ))}
-          <div style={{ height: '1px', backgroundColor: 'var(--border-color)', margin: '0.5rem 0' }} />
+          <div style={{ height: '1px', backgroundColor: 'var(--border-color)', margin: '0.25rem 0' }} />
           <a
-            href="http://localhost:3000/login"
-            style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--color-primary)' }}
+            href={`${PORTAL_URL}/login`}
+            style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--color-primary)' }}
           >
-            Iniciar Sesión en el Portal
+            Iniciar Sesión en el Portal &rarr;
           </a>
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenTrial();
+            }}
+            className="btn-primary"
+            style={{ width: '100%' }}
+          >
+            <Sparkles size={16} />
+            <span>Prueba 6 días gratis</span>
+          </button>
         </div>
       )}
     </nav>

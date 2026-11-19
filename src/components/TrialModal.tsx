@@ -3,6 +3,8 @@ import { X, Sparkles, CheckCircle2, ArrowRight, AlertCircle, Loader2 } from 'luc
 import { PlanDto, RegisterTrialResponse } from '../types';
 import { registerTrialUser } from '../services/api';
 
+const PORTAL_URL = import.meta.env.VITE_PORTAL_URL || 'http://localhost:3000';
+
 interface TrialModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -192,7 +194,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose, selecte
             </p>
 
             <a
-              href="http://localhost:3000/login"
+              href={`${PORTAL_URL}/login`}
               className="btn-primary"
               style={{ width: '100%', padding: '0.85rem', display: 'inline-flex', justifyContent: 'center' }}
             >
@@ -207,12 +209,12 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose, selecte
               <span>Prueba de 6 Días sin Compromiso</span>
             </div>
             <h3 className="heading-font" style={{ fontSize: '1.625rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
-              Crea tu Cuenta y Prueba HC-Scan
+              Crea tu Cuenta y Prueba Help Scan
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '1.75rem' }}>
               {selectedPlan
                 ? `Plan seleccionado: ${selectedPlan.name}. Activa hoy tus 6 días de acceso sin cargo.`
-                : 'Completa tus datos para activar 6 días de escaneo inteligente con IA para tu empresa.'}
+                : 'Completa tus datos para activar 6 días de digitalización inteligente con OCR e IA para tu empresa.'}
             </p>
 
             {error && (

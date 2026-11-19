@@ -1,0 +1,18 @@
+services:
+  help_scan_web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-https://api-scan.helpcopies.com/api}
+        VITE_PORTAL_URL: ${VITE_PORTAL_URL:-https://scan.helpcopies.com}
+    container_name: help_scan_web
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    healthcheck:
+      test: ["CMD-SHELL", "wget --spider -q http://127.0.0.1:3001/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

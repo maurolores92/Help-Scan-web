@@ -8,6 +8,7 @@ import { CtaBanner } from './components/CtaBanner';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { TrialModal } from './components/TrialModal';
+import { TechBackgroundCanvas } from './components/TechBackgroundCanvas';
 import { PlanDto } from './types';
 
 export function App() {
@@ -35,9 +36,10 @@ export function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+      <TechBackgroundCanvas />
       <Navbar onOpenTrial={handleOpenTrial} />
-      <main style={{ flexGrow: 1 }}>
+      <main style={{ flexGrow: 1, position: 'relative', zIndex: 1 }}>
         <Hero onOpenTrial={handleOpenTrial} />
         <AboutUs />
         <Features />

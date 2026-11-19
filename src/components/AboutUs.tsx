@@ -1,52 +1,82 @@
 import React from 'react';
-import { ShieldCheck, Wrench, Building2, CheckCircle } from 'lucide-react';
+import { ShieldCheck, Wrench, Building2, CheckCircle, Award, FileCheck, Cpu, Clock } from 'lucide-react';
+import { ImageSlot } from './ImageSlot';
 
 export const AboutUs: React.FC = () => {
   const stats = [
-    { value: '+30', label: 'Años de Trayectoria', desc: 'Liderando soluciones de impresión y digitalización' },
-    { value: '+500K', label: 'Documentos Indexados', desc: 'Facturas, remitos y contratos procesados con éxito' },
-    { value: '99.8%', label: 'Precisión OCR', desc: 'Detección precisa de CUITs, fechas y totales' },
-    { value: '< 24hs', label: 'Soporte y Reposición', desc: 'Mantenimiento preventivo de escáneres HP' },
+    {
+      value: '+30',
+      label: 'Años de Trayectoria',
+      desc: 'HelpCopies SRL liderando soluciones de impresión corporativa',
+      color: 'var(--color-primary)',
+      softBg: 'var(--color-primary-soft)',
+      icon: <Award size={22} color="var(--color-primary)" />,
+    },
+    {
+      value: '+500K',
+      label: 'Documentos Indexados',
+      desc: 'Facturas, remitos, recibos y O.C. procesados con éxito',
+      color: 'var(--color-secondary)',
+      softBg: 'var(--color-secondary-soft)',
+      icon: <FileCheck size={22} color="var(--color-secondary)" />,
+    },
+    {
+      value: '99.8%',
+      label: 'Precisión OCR + IA',
+      desc: 'Lectura inteligente de CUITs, CAE, fechas e importes',
+      color: 'var(--color-accent)',
+      softBg: 'var(--color-accent-soft)',
+      icon: <Cpu size={22} color="var(--color-accent)" />,
+    },
+    {
+      value: '< 24hs',
+      label: 'Soporte y Reposición',
+      desc: 'Mantenimiento preventivo y repuestos originales HP cubiertos',
+      color: 'var(--color-warning)',
+      softBg: 'rgba(245, 158, 11, 0.12)',
+      icon: <Clock size={22} color="var(--color-warning)" />,
+    },
   ];
 
   const pillars = [
     {
-      title: 'Modelo de Alquiler Todo Incluido',
-      desc: 'Sin necesidad de comprar costosos equipos de digitalización. Te instalamos hardware HP de alta velocidad con insumos y soporte integral.',
+      title: 'Modelo de Alquiler Todo Incluido por HelpCopies SRL',
+      desc: 'Sin necesidad de comprar costosos equipos de digitalización. Te instalamos hardware HP LaserJet y ScanJet de alta velocidad con insumos y soporte técnico integral.',
     },
     {
-      title: 'Digitalización Autónoma',
-      desc: 'Eliminamos las tareas manuales de escaneo y renombrado de archivos. Cada página enviada por SFTP es analizada y archivada automáticamente.',
+      title: 'Digitalización Autónoma Omnicanal',
+      desc: 'Eliminamos las tareas manuales de descarga y renombrado. Cada hoja escaneada por SFTP o recibida por correo IMAP, WhatsApp, Telegram o API ERP se analiza y clasifica automáticamente.',
     },
     {
-      title: 'Bóveda Cifrada e Inteligente',
-      desc: 'Tus documentos no son simples PDFs en una carpeta: son registros vivos en bases de datos con los que puedes interactuar mediante IA.',
+      title: 'Bóveda Cifrada e Indexada AES-256',
+      desc: 'Tus documentos dejan de ser archivos sueltos en carpetas: pasan a ser registros fiscales estructurados en base de datos listos para auditar y filtrar.',
     },
   ];
 
   return (
-    <section id="nosotros" style={{ padding: '6rem 0', backgroundColor: '#ffffff', position: 'relative' }}>
+    <section id="nosotros" style={{ padding: '6rem 0', backgroundColor: 'rgba(255, 255, 255, 0.72)', position: 'relative' }}>
       <div className="container">
-        {/* Section Header */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 4rem' }}>
+        {/* Encabezado de Sección */}
+        <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 4rem' }}>
           <div className="badge-pill" style={{ marginBottom: '1rem' }}>
             <Building2 size={14} />
-            <span>Quiénes Somos</span>
+            <span>Tecnología de HelpCopies SRL</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1.25rem', color: 'var(--text-main)' }}>
-            Innovación en Digitalización respaldada por <span className="gradient-text">HelpCopies</span>
+          <h2 style={{ fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 900, marginBottom: '1.25rem', color: 'var(--text-main)' }}>
+            Innovación en Digitalización respaldada por{' '}
+            <span className="gradient-text-tech">HelpCopies SRL</span>
           </h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: 1.6 }}>
-            En HelpCopies combinamos más de 15 años de experiencia en equipamiento de impresión empresarial con la tecnología más avanzada en Inteligencia Artificial.
-            Creamos <strong>HC-Scan</strong> para transformar el alquiler de escáneres en un centro neurálgico de gestión documental inteligente.
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: 1.65 }}>
+            En <strong>HelpCopies SRL</strong> unimos décadas de liderazgo en equipamiento de impresión empresarial con ingeniería propia de Inteligencia Artificial.
+            Diseñamos <strong>Help Scan</strong> para convertir los equipos multifunción de tu oficina en un centro neurálgico de gestión documental automática.
           </p>
         </div>
 
-        {/* Stats Grid */}
+        {/* Grid de Métricas con Acentos de Color y Sombras */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))',
             gap: '1.5rem',
             marginBottom: '4.5rem',
           }}
@@ -54,65 +84,100 @@ export const AboutUs: React.FC = () => {
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="light-card"
+              className="tech-card"
               style={{
                 padding: '2rem 1.5rem',
                 textAlign: 'center',
-                backgroundColor: 'var(--bg-page)',
+                backgroundColor: '#ffffff',
+                borderTop: `3px solid ${stat.color}`,
               }}
             >
               <div
-                style={{ fontSize: '2.75rem', fontWeight: 900, marginBottom: '0.5rem', lineHeight: 1, color: 'var(--color-primary)' }}
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '0.85rem',
+                  backgroundColor: stat.softBg,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 1rem',
+                }}
+              >
+                {stat.icon}
+              </div>
+              <div
+                style={{
+                  fontSize: '2.5rem',
+                  fontWeight: 900,
+                  marginBottom: '0.35rem',
+                  lineHeight: 1,
+                  color: stat.color,
+                }}
               >
                 {stat.value}
               </div>
-              <div style={{ fontSize: '1.0625rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.25rem' }}>
+              <div style={{ fontSize: '1.02rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.35rem' }}>
                 {stat.label}
               </div>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)' }}>{stat.desc}</p>
+              <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', lineHeight: 1.45 }}>{stat.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Story / Pillars Split View */}
+        {/* Vista Dividida: Pilares + Espacio Visual para Fotografía Corporativa */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem',
+            gap: '3rem',
             alignItems: 'center',
           }}
         >
           <div>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: 800, marginBottom: '1.25rem', lineHeight: 1.3, color: 'var(--text-main)' }}>
-              ¿Por qué conformarte con un escáner tradicional cuando puedes tener un asistente documental?
+            <div className="badge-pill badge-cyan" style={{ marginBottom: '1rem' }}>
+              <ShieldCheck size={14} />
+              <span>Respaldo Integral en Hardware y Software</span>
+            </div>
+            <h3 style={{ fontSize: '1.85rem', fontWeight: 800, marginBottom: '1.25rem', lineHeight: 1.25, color: 'var(--text-main)' }}>
+              ¿Por qué conformarte con un escáner común si puedes automatizar toda tu administración?
             </h3>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', marginBottom: '1.5rem', lineHeight: 1.6 }}>
-              Los escáneres convencionales acumulan archivos en carpetas desorganizadas que nadie revisa. Con HC-Scan, cada hoja que pasa por el alimentador HP se convierte en un registro contable indexado, con CUIT, número de comprobante, vencimiento e importes listos para consultar.
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.75rem', lineHeight: 1.65 }}>
+              Los escáneres tradicionales solo guardan PDFs mudos en carpetas compartidas. Con <strong>Help Scan de HelpCopies SRL</strong>, cada comprobante que entra por la bandeja HP, correo o mensajería queda clasificado en base de datos por tipo, fecha, CUIT, orden de compra e importes listos para filtrar o exportar a tu ERP.
             </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
               {pillars.map((pillar, i) => (
-                <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                <div
+                  key={i}
+                  className="light-card"
+                  style={{
+                    display: 'flex',
+                    gap: '0.85rem',
+                    alignItems: 'flex-start',
+                    padding: '1rem 1.15rem',
+                    backgroundColor: 'var(--bg-page)',
+                  }}
+                >
                   <div
                     style={{
-                      width: '24px',
-                      height: '24px',
+                      width: '28px',
+                      height: '28px',
                       borderRadius: '50%',
-                      backgroundColor: 'var(--color-primary-light)',
+                      backgroundColor: 'var(--color-primary-soft)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
-                      marginTop: '0.2rem',
+                      marginTop: '0.1rem',
                     }}
                   >
                     <CheckCircle size={16} color="var(--color-primary)" />
                   </div>
                   <div>
-                    <h4 style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.2rem' }}>
+                    <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '0.25rem' }}>
                       {pillar.title}
                     </h4>
-                    <p style={{ fontSize: '0.8125rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+                    <p style={{ fontSize: '0.83rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
                       {pillar.desc}
                     </p>
                   </div>
@@ -121,44 +186,47 @@ export const AboutUs: React.FC = () => {
             </div>
           </div>
 
-          <div
-            className="light-card"
-            style={{
-              padding: '2.5rem',
-              backgroundColor: 'var(--bg-page)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            <div className="badge-pill badge-emerald" style={{ marginBottom: '1.5rem' }}>
-              <ShieldCheck size={14} />
-              <span>Garantía de Servicio HelpCopies</span>
-            </div>
-            <h4 style={{ fontSize: '1.35rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--text-main)' }}>
-              Equipamiento Profesional Certificado
-            </h4>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-              Trabajamos con las líneas más confiables del mercado: <strong>HP LaserJet Enterprise y HP ScanJet Pro</strong>, configuradas a medida de la red de tu oficina para una transmisión SFTP encriptada y sin interrupciones.
-            </p>
-            <div
-              style={{
-                padding: '1.25rem',
-                borderRadius: '0.75rem',
-                backgroundColor: '#ffffff',
-                border: '1px solid var(--border-color)',
-                boxShadow: 'var(--shadow-sm)',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                <Wrench size={18} color="var(--color-secondary)" />
-                <span style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                  Mantenimiento e Insumos 100% Cubiertos
-                </span>
-              </div>
-              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', margin: 0 }}>
-                Si algún equipo presenta desgaste, nuestro servicio técnico especializado lo calibra o reemplaza en menos de 24 horas sin costo extra.
-              </p>
-            </div>
+          {/* Columna Derecha: Fondo visual preparado para imagen de HelpCopies SRL / Flota HP */}
+          <div>
+            <ImageSlot
+              slotLabel="Imagen Corporativa · HelpCopies SRL"
+              recommendedSize="1000 × 750 px"
+              suggestionText="Espacio reservado para foto de tu flota de impresoras HP Enterprise, centro técnico o equipo de HelpCopies SRL."
+              minHeight="420px"
+              showLaserBeam={false}
+              topLeftBadge={
+                <>
+                  <ShieldCheck size={14} color="#48b85f" />
+                  <span>Garantía Oficial HelpCopies SRL</span>
+                </>
+              }
+              bottomRightCard={
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div
+                    style={{
+                      width: '38px',
+                      height: '38px',
+                      borderRadius: '0.6rem',
+                      backgroundColor: 'var(--color-secondary-soft)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Wrench size={18} color="var(--color-secondary)" />
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)' }}>
+                      Mantenimiento e Insumos 100% Cubiertos
+                    </div>
+                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                      Reposición y calibración en &lt; 24 hs hábiles
+                    </div>
+                  </div>
+                </div>
+              }
+            />
           </div>
         </div>
       </div>

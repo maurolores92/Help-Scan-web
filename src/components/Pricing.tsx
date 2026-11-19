@@ -38,7 +38,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
   };
 
   return (
-    <section id="planes" style={{ padding: '6rem 0', backgroundColor: '#ffffff', position: 'relative' }}>
+    <section id="planes" style={{ padding: '6rem 0', backgroundColor: 'rgba(255, 255, 255, 0.72)', position: 'relative' }}>
       <div className="container">
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3rem' }}>
@@ -46,8 +46,8 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
             <Zap size={14} color="var(--color-primary)" />
             <span>Planes y Precios Transparentes en Pesos (ARS)</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1.25rem', color: 'var(--text-main)' }}>
-            Elige el plan ideal para tu <span className="gradient-text">Volumen de Escaneo</span>
+          <h2 style={{ fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 900, marginBottom: '1.25rem', color: 'var(--text-main)' }}>
+            Elige el plan ideal para tu <span className="gradient-text-tech">Volumen de Escaneo</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: 1.6 }}>
             Todos los valores están expresados en <strong>pesos argentinos (ARS)</strong>. Puedes comenzar hoy mismo con nuestra <strong>prueba gratuita de 6 días</strong> sin tarjeta ni compromiso.
@@ -239,7 +239,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                       <Check size={16} color="var(--color-accent)" strokeWidth={2.5} />
-                      <span><strong>{plan.maxAiQueriesMonthly ? plan.maxAiQueriesMonthly.toLocaleString('es-AR') : 'Ilimitadas'}</strong> consultas IA</span>
+                      <span><strong>{plan.maxAiQueriesMonthly ? plan.maxAiQueriesMonthly.toLocaleString('es-AR') : 'Ilimitados'}</strong> procesamientos OCR + IA</span>
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                       <Check size={16} color="var(--color-accent)" strokeWidth={2.5} />
@@ -278,7 +278,7 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
         <div style={{ textAlign: 'center', marginTop: '3rem', color: 'var(--text-muted)', fontSize: '0.875rem' }}>
           ¿Necesitas un plan a medida para más de 10 sedes o escaneo industrial masivo?{' '}
           <a href="#contacto" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>
-            Habla con un asesor comercial de HelpCopies
+            Habla con un asesor comercial de HelpCopies SRL
           </a>
         </div>
       </div>

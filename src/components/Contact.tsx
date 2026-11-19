@@ -78,7 +78,7 @@ export const Contact: React.FC = () => {
               Información Comercial y Soporte
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: 1.6, marginBottom: '2rem' }}>
-              HelpCopies ofrece cobertura integral en instalación, mantenimiento y reemplazo de escáneres en 24 horas.
+              <strong>HelpCopies SRL</strong> ofrece cobertura integral en instalación, mantenimiento y reemplazo de escáneres en 24 horas.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -93,7 +93,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '0.5rem', backgroundColor: 'rgba(5, 150, 105, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '0.5rem', backgroundColor: 'var(--color-accent-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Phone size={20} color="var(--color-accent)" />
                 </div>
                 <div>
@@ -103,7 +103,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div style={{ width: '40px', height: '40px', borderRadius: '0.5rem', backgroundColor: 'rgba(2, 132, 199, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '0.5rem', backgroundColor: 'var(--color-secondary-soft)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <MapPin size={20} color="var(--color-secondary)" />
                 </div>
                 <div>
@@ -113,7 +113,7 @@ export const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div style={{ marginTop: '2.5rem', padding: '1.25rem', backgroundColor: 'var(--color-primary-light)', borderRadius: '0.75rem', border: '1px solid #bfdbfe' }}>
+            <div style={{ marginTop: '2.5rem', padding: '1.25rem', backgroundColor: 'var(--color-primary-light)', borderRadius: '0.75rem', border: '1px solid rgba(50, 160, 72, 0.28)' }}>
               <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--color-primary)', display: 'block', marginBottom: '0.25rem' }}>
                 ¿Prefieres que te llamemos?
               </span>
@@ -134,7 +134,7 @@ export const Contact: React.FC = () => {
                   ¡Mensaje Enviado con Éxito!
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', marginBottom: '2rem' }}>
-                  Gracias por tu interés en <strong>HC-Scan</strong>. Nuestro equipo comercial se comunicará contigo al correo <em>{formData.email}</em> para coordinar tu prueba de 6 días.
+                  Gracias por tu interés en <strong>Help Scan</strong>. Nuestro equipo comercial se comunicará contigo al correo <em>{formData.email}</em> para coordinar tu prueba de 6 días.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
