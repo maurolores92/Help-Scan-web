@@ -62,9 +62,29 @@ export const AboutUs: React.FC = () => {
             <Building2 size={14} />
             <span>Tecnología de HelpCopies SRL</span>
           </div>
-          <h2 style={{ fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 900, marginBottom: '1.25rem', color: 'var(--text-main)' }}>
+          <h2
+            style={{
+              fontSize: 'clamp(1.875rem, 4vw, 2.75rem)',
+              fontWeight: 900,
+              marginBottom: '1.25rem',
+              color: 'var(--text-main)',
+              lineHeight: 1.25,
+            }}
+          >
             Innovación en Digitalización respaldada por{' '}
-            <span className="gradient-text-tech">HelpCopies SRL</span>
+            <img
+              src="/images/Help-Copies-con-fondo-blanco.png"
+              alt="HelpCopies SRL"
+              style={{
+                height: '1.18em',
+                width: 'auto',
+                display: 'inline-block',
+                verticalAlign: 'middle',
+                marginLeft: '0.2rem',
+                transform: 'translateY(-0.06em)',
+                mixBlendMode: 'multiply',
+              }}
+            />
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: 1.65 }}>
             En <strong>HelpCopies SRL</strong> unimos décadas de liderazgo en equipamiento de impresión empresarial con ingeniería propia de Inteligencia Artificial.

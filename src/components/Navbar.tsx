@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
   const navLinks = [
     { label: 'Inicio', href: '#inicio' },
     { label: 'HelpCopies SRL', href: '#nosotros' },
-    { label: 'Tecnología', href: '#por-que-elegirnos' },
+    { label: 'Soluciones', href: '#por-que-elegirnos' },
     { label: 'Planes', href: '#planes' },
     { label: 'Contacto', href: '#contacto' },
   ];
@@ -46,41 +46,46 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href="#inicio" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-          <img
-            src="/images/logo-sin-fondo.png"
-            alt="Help Scan Logo"
-            style={{
-              height: '42px',
-              width: 'auto',
-              objectFit: 'contain',
-              filter: 'drop-shadow(0 3px 8px rgba(50, 160, 72, 0.22))',
-            }}
-          />
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-              <span style={{ fontSize: '1.25rem', fontWeight: 900, letterSpacing: '-0.02em', color: 'var(--text-main)' }}>
-                Help Scan
-              </span>
-              <span
-                style={{
-                  fontSize: '0.625rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  padding: '0.15rem 0.5rem',
-                  borderRadius: '9999px',
-                  backgroundColor: 'var(--color-primary-soft)',
-                  color: 'var(--color-primary-hover)',
-                  border: '1px solid rgba(50, 160, 72, 0.25)',
-                }}
-              >
-                AI + OCR
-              </span>
-            </div>
-            <p style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', margin: 0, fontWeight: 500 }}>
-              por <strong style={{ color: 'var(--text-secondary)' }}>HelpCopies SRL</strong>
-            </p>
+        <a
+          href="#inicio"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-start',
+            gap: '0.15rem',
+            lineHeight: 1.1,
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <img
+              src="/images/HelpScan-plano.png"
+              alt="Help Scan Logo"
+              style={{
+                height: '34px',
+                width: 'auto',
+                objectFit: 'contain',
+                display: 'block',
+              }}
+            />
+            <span
+              style={{
+                fontSize: '0.625rem',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                padding: '0.15rem 0.45rem',
+                borderRadius: '9999px',
+                backgroundColor: 'var(--color-primary-soft)',
+                color: 'var(--color-primary-hover)',
+                border: '1px solid rgba(50, 160, 72, 0.25)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              AI + OCR
+            </span>
           </div>
+          <p style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', margin: 0, fontWeight: 500 }}>
+            por <strong style={{ color: 'var(--text-secondary)' }}>HelpCopies SRL</strong>
+          </p>
         </a>
 
         {/* Desktop Navigation Links */}
