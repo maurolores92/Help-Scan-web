@@ -209,7 +209,7 @@ export const TrialModal: React.FC<TrialModalProps> = ({ isOpen, onClose, selecte
               <span>Prueba de 6 Días sin Compromiso</span>
             </div>
             <h3 className="heading-font" style={{ fontSize: '1.625rem', fontWeight: 800, marginBottom: '0.5rem', color: 'var(--text-main)' }}>
-              Crea tu Cuenta y Prueba Help Scan
+              Crea tu Cuenta y Prueba HelpScan
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '1.75rem' }}>
               {selectedPlan

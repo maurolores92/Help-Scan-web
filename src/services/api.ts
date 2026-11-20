@@ -1,4 +1,10 @@
-import { PlanDto, RegisterTrialRequest, RegisterTrialResponse } from '../types';
+import {
+  DemoRequestPayload,
+  DemoRequestResponse,
+  PlanDto,
+  RegisterTrialRequest,
+  RegisterTrialResponse,
+} from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5002/api';
 
@@ -107,7 +113,7 @@ export async function fetchPublicPlans(): Promise<PlanDto[]> {
 
     return FALLBACK_PLANS;
   } catch (err) {
-    console.warn('[Help Scan Web] Usando planes de contingencia (API no disponible):', err);
+    console.warn('[HelpScan Web] Usando planes de contingencia (API no disponible):', err);
     return FALLBACK_PLANS;
   }
 }
@@ -127,6 +133,33 @@ export async function registerTrialUser(payload: RegisterTrialRequest): Promise<
     const errorMsg = Array.isArray(data.message)
       ? data.message.join(', ')
       : data.message || 'Error al procesar el registro de la prueba';
+    throw new Error(errorMsg);
+  }
+
+  return data;
+}
+
+export async function sendDemoRequest(payload: DemoRequestPayload): Promise<DemoRequestResponse> {
+  const res = await fetch(`${API_BASE_URL}/demo-requests`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  let data: any = {};
+  try {
+    data = await res.json();
+  } catch {
+    data = {};
+  }
+
+  if (!res.ok) {
+    const errorMsg = Array.isArray(data.message)
+      ? data.message.join(', ')
+      : data.message || 'No se pudo enviar la solicitud de demostración. Intentá nuevamente.';
     throw new Error(errorMsg);
   }
 

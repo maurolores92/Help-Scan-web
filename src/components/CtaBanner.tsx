@@ -2,10 +2,10 @@ import React from 'react';
 import { ArrowRight, Sparkles, MessageCircle } from 'lucide-react';
 
 interface CtaBannerProps {
-  onOpenTrial: () => void;
+  onRequestDemo: () => void;
 }
 
-export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenTrial }) => {
+export const CtaBanner: React.FC<CtaBannerProps> = ({ onRequestDemo }) => {
   return (
     <section style={{ padding: '4.5rem 0' }}>
       <div className="container">
@@ -66,7 +66,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenTrial }) => {
             }}
           >
             <Sparkles size={14} color="#48b85f" />
-            <span>Prueba de 6 Días sin Compromiso · HelpCopies SRL</span>
+            <span>Demostración Personalizada · HelpCopies SRL</span>
           </div>
 
           <h2
@@ -81,22 +81,22 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenTrial }) => {
               zIndex: 2,
             }}
           >
-            Crea tu cuenta y prueba nuestro sistema{' '}
-            <span style={{ color: '#48b85f' }}>Help Scan por 6 días</span>
+            Solicitá una demostración con tus propios comprobantes y{' '}
+            <span style={{ color: '#48b85f' }}>mirá cuánto tiempo ahorrás</span>
           </h2>
 
           <p
             style={{
               color: '#cbd5e1',
               fontSize: '1.0625rem',
-              maxWidth: '660px',
+              maxWidth: '680px',
               lineHeight: 1.65,
               marginBottom: '2.25rem',
               position: 'relative',
               zIndex: 2,
             }}
           >
-            Digitaliza facturas, remitos, órdenes de compra y correos en segundos. Te instalamos el equipo HP o centraliza tus comprobantes desde Email, WhatsApp, Telegram o tu ERP sin carga manual.
+            Te mostramos en vivo cómo tus facturas, remitos y recibos que entran por correo, WhatsApp, Telegram o impresoras HP quedan validados, ordenados y listos para pasar a tu gestión, con el acompañamiento real de HelpCopies SRL.
           </p>
 
           <div
@@ -110,15 +110,15 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenTrial }) => {
             }}
           >
             <button
-              onClick={onOpenTrial}
+              onClick={onRequestDemo}
               className="btn-primary"
               style={{ fontSize: '1.02rem', padding: '0.95rem 2.1rem' }}
             >
-              <span>Comenzar Prueba Gratuita</span>
+              <span>Solicitar Demostración</span>
               <ArrowRight size={18} />
             </button>
             <a
-              href="https://wa.me/5491100000000?text=Hola,%20quisiera%20asesoramiento%20sobre%20el%20sistema%20Help%20Scan%20de%20HelpCopies%20SRL"
+              href="https://wa.me/5491100000000?text=Hola,%20quisiera%20solicitar%20una%20demostraci%C3%B3n%20de%20Help%20Scan%20de%20HelpCopies%20SRL"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
@@ -142,7 +142,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenTrial }) => {
               zIndex: 2,
             }}
           >
-            ✓ Activación inmediata · Resguardo privado · Cancelación automática sin penalizaciones
+            ✓ Demo guiada en vivo · No cambiás tu ERP · Puesta en marcha asistida por HelpCopies SRL
           </p>
         </div>
       </div>

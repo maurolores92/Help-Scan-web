@@ -29,17 +29,17 @@ export const Footer: React.FC = () => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <img
-                src="/images/HelpScan.png"
-                alt="Help Scan por HelpCopies SRL"
+                src="/images/HelpScan-plano.png"
+                alt="HelpScan por HelpCopies SRL"
                 style={{
-                  height: '44px',
+                  height: '60px',
                   width: 'auto',
                   objectFit: 'contain',
                 }}
               />
             </div>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6, marginBottom: '1rem' }}>
-              Solución integral de digitalización y automatización documental desde equipos HP, Email, WhatsApp, Telegram y tu ERP.
+              Controlá facturas, remitos y recibos sin cargar datos a mano. Ingreso automático desde equipos HP, correo, WhatsApp, Telegram y API para tu sistema habitual.
             </p>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
               Un producto de <strong>HelpCopies SRL</strong>
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
                 <a href="#por-que-elegirnos" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Por qué elegirnos</a>
               </li>
               <li>
-                <a href="#planes" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Planes y Precios</a>
+                <a href="#demos" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Demos</a>
               </li>
               <li>
                 <a href="#contacto" style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Contacto</a>
@@ -123,10 +123,10 @@ export const Footer: React.FC = () => {
           }}
         >
           <div>
-            © {new Date().getFullYear()} <strong>Help Scan</strong>. Desarrollado por <strong>HelpCopies SRL</strong>.
+            © {new Date().getFullYear()} <strong>HelpScan</strong>. Desarrollado por <strong>HelpCopies SRL</strong>.
           </div>
           <div>
-            <span>Alquiler inteligente de escaneo y gestión documental empresarial.</span>
+            <span>Recepción, validación y control de comprobantes con respaldo de HelpCopies SRL.</span>
           </div>
         </div>
       </div>

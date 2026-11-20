@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Headphones } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Headphones, AlertCircle } from 'lucide-react';
 import { ContactFormData } from '../types';
+import { sendDemoRequest } from '../services/api';
+import { MANAGEMENT_SYSTEM_OPTIONS } from '../constants/managementSystems';
 
 export const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -8,22 +10,30 @@ export const Contact: React.FC = () => {
     companyName: '',
     email: '',
     phone: '',
-    scannersCount: '1',
+    managementSystem: MANAGEMENT_SYSTEM_OPTIONS[0].value,
     message: '',
   });
 
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     setLoading(true);
 
-    // Simula envío exitoso (o endpoint backend si existiera)
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      await sendDemoRequest({
+        ...formData,
+        source: 'contact_section',
+      });
       setSubmitted(true);
-    }, 700);
+    } catch (err: any) {
+      setError(err?.message || 'No se pudo enviar tu solicitud. Intentá nuevamente.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -54,13 +64,13 @@ export const Contact: React.FC = () => {
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 4rem' }}>
           <div className="badge-pill" style={{ marginBottom: '1rem' }}>
             <Headphones size={14} color="var(--color-primary)" />
-            <span>Contacto y Asesoramiento</span>
+            <span>Solicitar Demostración y Asesoramiento</span>
           </div>
           <h2 className="heading-font" style={{ fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 800, marginBottom: '1.25rem', color: 'var(--text-main)' }}>
-            Hablemos sobre las necesidades de <span className="gradient-text">tu Empresa</span>
+            Coordiná una demostración adaptada a <span className="gradient-text">tu administración</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: 1.6 }}>
-            ¿Tienes dudas sobre la compatibilidad con tus sistemas actuales o necesitas asesoramiento sobre qué equipo HP alquilar? Nuestro equipo técnico está para ayudarte.
+            Contanos cómo reciben y cargan hoy los comprobantes y coordinamos una demostración en vivo sin cambiar tu sistema contable ni asumir compromisos pesados.
           </p>
         </div>
 
@@ -88,7 +98,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Correo comercial</span>
-                  <p style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-main)', margin: 0 }}>contacto@helpcopies.com.ar</p>
+                  <p style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-main)', margin: 0 }}>info@helpscan.com.ar</p>
                 </div>
               </div>
 
@@ -98,7 +108,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Atención telefónica / WhatsApp</span>
-                  <p style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-main)', margin: 0 }}>+54 (11) 4567-8900</p>
+                  <p style={{ fontSize: '0.9375rem', fontWeight: 600, color: 'var(--text-main)', margin: 0 }}>+54 9 223 560-0097</p>
                 </div>
               </div>
 
@@ -131,10 +141,10 @@ export const Contact: React.FC = () => {
                   <CheckCircle2 size={36} color="var(--color-accent)" />
                 </div>
                 <h3 className="heading-font" style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--text-main)' }}>
-                  ¡Mensaje Enviado con Éxito!
+                  ¡Solicitud de Demostración Enviada!
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', marginBottom: '2rem' }}>
-                  Gracias por tu interés en <strong>Help Scan</strong>. Nuestro equipo comercial se comunicará contigo al correo <em>{formData.email}</em> para coordinar tu prueba de 6 días.
+                  Gracias por tu interés en <strong>HelpScan</strong>. Nuestro equipo comercial se comunicará contigo al correo <em>{formData.email}</em> para coordinar una demostración personalizada con tus comprobantes.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
@@ -146,6 +156,24 @@ export const Contact: React.FC = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                {error && (
+                  <div
+                    style={{
+                      padding: '0.75rem 0.9rem',
+                      borderRadius: '0.5rem',
+                      backgroundColor: 'rgba(239, 68, 68, 0.08)',
+                      border: '1px solid rgba(239, 68, 68, 0.35)',
+                      color: '#b91c1c',
+                      fontSize: '0.82rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                    }}
+                  >
+                    <AlertCircle size={16} style={{ flexShrink: 0 }} />
+                    <span>{error}</span>
+                  </div>
+                )}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.25rem' }}>
                   <div>
                     <label style={labelStyle}>
@@ -207,17 +235,18 @@ export const Contact: React.FC = () => {
 
                 <div>
                   <label style={labelStyle}>
-                    Cantidad de Escáneres deseados
+                    Sistema de Gestión
                   </label>
                   <select
-                    value={formData.scannersCount}
-                    onChange={(e) => setFormData({ ...formData, scannersCount: e.target.value })}
+                    value={formData.managementSystem}
+                    onChange={(e) => setFormData({ ...formData, managementSystem: e.target.value })}
                     style={inputStyle}
                   >
-                    <option value="1">1 Escáner (Estudios contables / Oficina pequeña)</option>
-                    <option value="2-3">2 a 3 Escáneres (Empresa mediana / Múltiples sectores)</option>
-                    <option value="4+">4 o más Escáneres (Corporativo / Centros logísticos)</option>
-                    <option value="software-only">Solo software (Ya dispongo de equipos HP)</option>
+                    {MANAGEMENT_SYSTEM_OPTIONS.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
                   </select>
                 </div>
 
@@ -229,7 +258,7 @@ export const Contact: React.FC = () => {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Cuéntanos brevemente qué tipo de documentos escanean habitualmente (facturas, remitos, historias clínicas...)"
+                    placeholder="Contanos qué comprobantes reciben (facturas, remitos, transferencias, tickets...) y qué sistema contable utilizan"
                     style={{
                       ...inputStyle,
                       resize: 'vertical',
@@ -244,7 +273,7 @@ export const Contact: React.FC = () => {
                   style={{ width: '100%', padding: '0.9rem', marginTop: '0.5rem' }}
                 >
                   <Send size={18} />
-                  <span>{loading ? 'Enviando...' : 'Enviar Consulta y Solicitar Prueba'}</span>
+                  <span>{loading ? 'Enviando...' : 'Solicitar Demostración'}</span>
                 </button>
               </form>
             )}

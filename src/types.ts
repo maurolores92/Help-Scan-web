@@ -63,6 +63,23 @@ export interface ContactFormData {
   companyName: string;
   email: string;
   phone: string;
-  scannersCount: string;
+  managementSystem: string;
+  message: string;
+}
+
+export interface DemoRequestPayload {
+  fullName: string;
+  companyName: string;
+  email: string;
+  phone?: string;
+  managementSystem?: string;
+  scannersCount?: string;
+  selectedDemo?: string;
+  message?: string;
+  source?: 'demo_modal' | 'contact_section';
+}
+
+export interface DemoRequestResponse {
+  ok: boolean;
   message: string;
 }

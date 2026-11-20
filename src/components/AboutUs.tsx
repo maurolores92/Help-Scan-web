@@ -1,94 +1,118 @@
 import React from 'react';
-import { ShieldCheck, Wrench, Building2, CheckCircle, Award, FileCheck, Cpu, Clock } from 'lucide-react';
+import { ShieldCheck, Building2, CheckCircle, FolderOpen, Clock, AlertTriangle, RefreshCw } from 'lucide-react';
 import { ImageSlot } from './ImageSlot';
 
 export const AboutUs: React.FC = () => {
   const stats = [
     {
-      value: '+30',
-      label: 'Años de Trayectoria',
-      desc: 'HelpCopies SRL liderando soluciones de impresión corporativa',
+      value: 'Dispersión',
+      label: 'Comprobantes por todos lados',
+      desc: 'Facturas y remitos que llegan por mail, WhatsApp o papel y nadie sabe dónde quedaron.',
       color: 'var(--color-primary)',
       softBg: 'var(--color-primary-soft)',
-      icon: <Award size={22} color="var(--color-primary)" />,
+      icon: <FolderOpen size={22} color="var(--color-primary)" />,
     },
     {
-      value: '+500K',
-      label: 'Documentos Indexados',
-      desc: 'Facturas, remitos, recibos y O.C. procesados con éxito',
+      value: 'Tiempo',
+      label: 'Horas de carga manual',
+      desc: 'Personal descargando adjuntos, cargando importes a mano o buscando entre archivos sueltos sin estructura.',
       color: 'var(--color-secondary)',
       softBg: 'var(--color-secondary-soft)',
-      icon: <FileCheck size={22} color="var(--color-secondary)" />,
+      icon: <Clock size={22} color="var(--color-secondary)" />,
     },
     {
-      value: '99.8%',
-      label: 'Precisión Automática',
-      desc: 'Lectura exacta de CUITs, vencimientos, fechas e importes',
-      color: 'var(--color-accent)',
-      softBg: 'var(--color-accent-soft)',
-      icon: <Cpu size={22} color="var(--color-accent)" />,
-    },
-    {
-      value: '< 24hs',
-      label: 'Soporte y Reposición',
-      desc: 'Mantenimiento preventivo y repuestos originales HP cubiertos',
+      value: 'Errores',
+      label: 'Riesgo de cargar mal o duplicar',
+      desc: 'Pasar mal un importe o una fecha, duplicar un gasto o demorar el control del mes.',
       color: 'var(--color-warning)',
       softBg: 'rgba(245, 158, 11, 0.12)',
-      icon: <Clock size={22} color="var(--color-warning)" />,
+      icon: <AlertTriangle size={22} color="var(--color-warning)" />,
+    },
+    {
+      value: 'Fricción',
+      label: 'Miedo a cambiar de sistema',
+      desc: 'La molestia de pensar en cambiar tu sistema contable/ERP actual o armar procesos complejos.',
+      color: 'var(--color-accent)',
+      softBg: 'var(--color-accent-soft)',
+      icon: <RefreshCw size={22} color="var(--color-accent)" />,
     },
   ];
 
   const pillars = [
     {
-      title: 'Modelo de Alquiler Todo Incluido por HelpCopies SRL',
-      desc: 'Sin necesidad de comprar costosos equipos de digitalización. Te instalamos hardware HP LaserJet y ScanJet de alta velocidad con insumos y soporte técnico integral.',
+      title: '1. Entra solo, sin importar el canal',
+      desc: 'Lo que llega por correo, WhatsApp, Telegram, escáner/impresora HP o integración pasa directo al circuito, sin descargar archivos uno por uno.',
     },
     {
-      title: 'Recepción Automática desde Cualquier Canal',
-      desc: 'Eliminamos las tareas manuales de descarga y archivo. Cada comprobante escaneado o recibido por correo, WhatsApp, Telegram o tu sistema contable se clasifica al instante.',
+      title: '2. Queda ordenado y legible al instante',
+      desc: 'Cada comprobante deja de ser un archivo suelto y pasa a tener sus datos clave ordenados para validar importes, fechas y revisar rápido.',
     },
     {
-      title: 'Archivo Empresarial Seguro y Ordenado',
-      desc: 'Tus documentos dejan de ser archivos sueltos en carpetas: pasan a estar organizados por proveedor, fecha e importe, listos para filtrar y aprobar.',
+      title: '3. Listo para tu gestión y respaldo',
+      desc: 'Podés ubicar cualquier comprobante en segundos o llevar la información a tu sistema habitual, sumando el respaldo de HelpCopies SRL en equipos HP y puesta en marcha.',
     },
   ];
 
   return (
-    <section id="nosotros" style={{ padding: '6rem 0', backgroundColor: 'rgba(255, 255, 255, 0.72)', position: 'relative' }}>
+    <section id="nosotros" style={{ padding: '6rem 0', position: 'relative' }}>
       <div className="container">
-        {/* Encabezado de Sección */}
-        <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 4rem' }}>
+        {/* Encabezado de Sección: Bloque 2 - El problema cotidiano */}
+        <div style={{ textAlign: 'center', maxWidth: '960px', margin: '0 auto 2.5rem' }}>
           <div className="badge-pill" style={{ marginBottom: '1rem' }}>
             <Building2 size={14} />
-            <span>Tecnología de HelpCopies SRL</span>
+            <span>¿Te pasa esto en tu administración? · HelpCopies SRL</span>
           </div>
           <h2
             style={{
-              fontSize: 'clamp(1.875rem, 4vw, 2.75rem)',
+              fontSize: 'clamp(1.75rem, 3.6vw, 2.55rem)',
               fontWeight: 900,
               marginBottom: '1.25rem',
               color: 'var(--text-main)',
               lineHeight: 1.25,
             }}
           >
-            Innovación en Digitalización respaldada por{' '}
-            <img
-              src="/images/Help-Copies-con-fondo-blanco.png"
-              alt="HelpCopies SRL"
+            Controlar comprobantes sin perder horas,{' '}
+            <span
               style={{
-                height: '4em',
-                width: 'auto',
-                display: 'inline-block',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                whiteSpace: 'nowrap',
                 verticalAlign: 'middle',
-                marginLeft: '0.2rem',
-                transform: 'translateY(-0.06em)',
-                mixBlendMode: 'multiply',
               }}
-            />
+            >
+              <span>respaldado por</span>
+              <img
+                src="/images/Help-Copies-con-fondo-blanco.png"
+                alt="HelpCopies SRL"
+                style={{
+                  height: '3.1em',
+                  width: 'auto',
+                  display: 'inline-block',
+                  verticalAlign: 'middle',
+                  transform: 'translateY(-0.04em)',
+                  mixBlendMode: 'multiply',
+                }}
+              />
+            </span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: 1.65 }}>
-            En <strong>HelpCopies SRL</strong> unimos décadas de liderazgo en equipamiento de impresión empresarial con ingeniería propia de Inteligencia Artificial.
-            Diseñamos <strong>Help Scan</strong> para convertir los equipos multifunción de tu oficina en un centro neurálgico de gestión documental automática.
+            Un escáner común o un archivo PDF guardado no resuelve el día a día de administración.
+            Lo que realmente ahorra tiempo es validar lo que llegó, evitar errores de carga y ubicar cada dato al instante.
+          </p>
+        </div>
+
+        {/* Pequeño texto personal antes del grid */}
+        <div style={{ textAlign: 'center', marginBottom: '1.75rem' }}>
+          <p
+            style={{
+              fontSize: 'clamp(1.15rem, 2.2vw, 1.45rem)',
+              fontWeight: 700,
+              color: 'var(--text-main)',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            ¿Así es tu día a día?
           </p>
         </div>
 
@@ -157,13 +181,13 @@ export const AboutUs: React.FC = () => {
           <div>
             <div className="badge-pill badge-cyan" style={{ marginBottom: '1rem' }}>
               <ShieldCheck size={14} />
-              <span>Respaldo Integral en Hardware y Software</span>
+              <span>Cómo lo resolvemos sin romper tu circuito</span>
             </div>
             <h3 style={{ fontSize: '1.85rem', fontWeight: 800, marginBottom: '1.25rem', lineHeight: 1.25, color: 'var(--text-main)' }}>
-              ¿Por qué conformarte con un escáner común si puedes automatizar toda tu administración?
+              Se adapta a tu forma de trabajar, sin cambiar tu sistema contable
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.75rem', lineHeight: 1.65 }}>
-              Los escáneres tradicionales solo guardan archivos mudos en carpetas compartidas. Con <strong>Help Scan de HelpCopies SRL</strong>, cada comprobante que entra por tu impresora HP, correo o mensajería queda clasificado por tipo, fecha, CUIT, orden de compra e importes, listo para buscar o exportar a tu ERP.
+              Los escáneres tradicionales solo guardan archivos mudos sin datos útiles. Con <strong>HelpScan de HelpCopies SRL</strong>, cada comprobante entra por tu canal habitual y queda validado, ordenado y listo para pasar a tu gestión.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.15rem' }}>
               {pillars.map((pillar, i) => (
@@ -206,46 +230,17 @@ export const AboutUs: React.FC = () => {
             </div>
           </div>
 
-          {/* Columna Derecha: Fondo visual preparado para imagen de HelpCopies SRL / Flota HP */}
+          {/* Columna Derecha: Transformación del documento dentro de ImageSlot con efecto escáner */}
           <div>
             <ImageSlot
-              slotLabel="Imagen Corporativa · HelpCopies SRL"
-              recommendedSize="1000 × 750 px"
-              suggestionText="Espacio reservado para foto de tu flota de impresoras HP Enterprise, centro técnico o equipo de HelpCopies SRL."
-              minHeight="420px"
-              showLaserBeam={false}
-              topLeftBadge={
-                <>
-                  <ShieldCheck size={14} color="#48b85f" />
-                  <span>Garantía Oficial HelpCopies SRL</span>
-                </>
-              }
-              bottomRightCard={
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                  <div
-                    style={{
-                      width: '38px',
-                      height: '38px',
-                      borderRadius: '0.6rem',
-                      backgroundColor: 'var(--color-secondary-soft)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <Wrench size={18} color="var(--color-secondary)" />
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                      Mantenimiento e Insumos 100% Cubiertos
-                    </div>
-                    <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                      Reposición y calibración en &lt; 24 hs hábiles
-                    </div>
-                  </div>
-                </div>
-              }
+              slotLabel="Transformación de archivo mudo a dato estructurado listo para ERP con HelpScan"
+              recommendedSize="1024 × 1024 px"
+              suggestionText=""
+              imageSrc="/images/BannerAboutTransformation-square.jpg"
+              minHeight="auto"
+              aspectRatio="4 / 3"
+              imageFit="cover"
+              showLaserBeam
             />
           </div>
         </div>

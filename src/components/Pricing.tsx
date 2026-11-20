@@ -30,8 +30,8 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
   }, []);
 
   const formatPrice = (plan: PlanDto) => {
-    if (plan.priceMonthly === 0 || plan.isTrial) {
-      return '$ 0';
+    if (Number(plan.priceMonthly) === 0 || plan.isTrial) {
+      return 'GRATIS';
     }
     const finalPrice = billingCycle === 'annual' ? Math.round(plan.priceMonthly * 0.8) : plan.priceMonthly;
     return `$ ${finalPrice.toLocaleString('es-AR')}`;
@@ -47,10 +47,10 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
             <span>Planes y Precios Transparentes en Pesos (ARS)</span>
           </div>
           <h2 style={{ fontSize: 'clamp(1.875rem, 4vw, 2.75rem)', fontWeight: 900, marginBottom: '1.25rem', color: 'var(--text-main)' }}>
-            Elige el plan ideal para tu <span className="gradient-text-tech">Volumen de Escaneo</span>
+            Elegí el plan que acompaña tu <span className="gradient-text-tech">ritmo de trabajo</span>
           </h2>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.0625rem', lineHeight: 1.6 }}>
-            Todos los valores están expresados en <strong>pesos argentinos (ARS)</strong>. Puedes comenzar hoy mismo con nuestra <strong>prueba gratuita de 6 días</strong> sin tarjeta ni compromiso.
+            Todos los valores están en <strong>pesos argentinos (ARS)</strong>. Empezá probando el flujo con tus propios comprobantes durante <strong>6 días sin cargo</strong> y sin tarjeta.
           </p>
 
           {/* Billing Cycle Toggle */}
@@ -122,7 +122,9 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
         >
           {plans.map((plan) => {
             const isFeatured = plan.slug === 'pro' || plan.name.toLowerCase().includes('pro');
-            const isFreeTrial = plan.priceMonthly === 0 || plan.isTrial;
+            const isZeroPrice = Number(plan.priceMonthly) === 0;
+            const isFreeTrial = Boolean(plan.isTrial);
+            const isFreePlan = isZeroPrice || isFreeTrial;
 
             return (
               <div
@@ -212,17 +214,19 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
                         {formatPrice(plan)}
                       </span>
                       <span style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>
-                        {isFreeTrial ? ' / 6 días' : ' / mes'}
+                        {isFreeTrial ? ` / ${plan.trialDays || 6} días` : ' / mes'}
                       </span>
                     </div>
 
-                    {plan.originalCurrency === 'USD' && plan.originalPrice && plan.priceMonthly > 0 ? (
+                    {plan.originalCurrency === 'USD' && plan.originalPrice && Number(plan.priceMonthly) > 0 ? (
                       <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                         Base: US$ {plan.originalPrice} (cotizado a ${plan.exchangeRate?.toLocaleString('es-AR')} ARS)
                       </p>
-                    ) : isFreeTrial ? (
+                    ) : isFreePlan ? (
                       <p style={{ fontSize: '0.75rem', color: 'var(--color-accent)', fontWeight: 600, marginTop: '0.35rem' }}>
-                        Sin costo durante 6 días • Sin tarjeta requerida
+                        {isFreeTrial
+                          ? `Sin costo durante ${plan.trialDays || 6} días • Sin tarjeta requerida`
+                          : 'Plan gratuito • Sin costo mensual'}
                       </p>
                     ) : (
                       <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
@@ -266,7 +270,13 @@ export const Pricing: React.FC<PricingProps> = ({ onSelectPlan }) => {
                   className={isFeatured ? 'btn-primary' : 'btn-secondary'}
                   style={{ width: '100%', padding: '0.85rem' }}
                 >
-                  <span>{isFreeTrial ? 'Comenzar Prueba Gratis (6 Días)' : 'Elegir Plan y Probar 6 Días'}</span>
+                  <span>
+                    {isFreeTrial
+                      ? `Comenzar Prueba Gratis (${plan.trialDays || 6} Días)`
+                      : isZeroPrice
+                        ? 'Comenzar Gratis'
+                        : 'Elegir Plan y Probar 6 Días'}
+                  </span>
                   <ArrowRight size={16} />
                 </button>
               </div>

@@ -16,10 +16,10 @@ import {
 import { ImageSlot } from './ImageSlot';
 
 interface HeroProps {
-  onOpenTrial: () => void;
+  onRequestDemo: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
+export const Hero: React.FC<HeroProps> = ({ onRequestDemo }) => {
   const [activeTab, setActiveTab] = useState<'channels' | 'extract' | 'filters'>('channels');
 
   return (
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
             <div style={{ marginBottom: '1.35rem' }}>
               <div className="badge-pill">
                 <Sparkles size={14} />
-                <span>HelpCopies SRL · Automatización Documental para Empresas</span>
+                <span>HelpCopies SRL · Control y Orden sin Carga Manual</span>
               </div>
             </div>
 
@@ -80,8 +80,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 color: 'var(--text-main)',
               }}
             >
-              Simplifica la Gestión de{' '}
-              <span className="gradient-text-tech">Facturas, Remitos y Comprobantes</span>
+              Tu administración al día sin{' '}
+              <span className="gradient-text-tech">cargar comprobantes a mano</span>
             </h1>
 
             <p
@@ -92,9 +92,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 marginBottom: '2rem',
               }}
             >
-              Con <strong>Help Scan</strong> olvídate de descargar archivos o cargar comprobantes a mano.
-              Recibe documentos automáticamente desde tus <strong>impresoras HP</strong>, <strong>Correo Electrónico</strong>,{' '}
-              <strong>WhatsApp</strong>, <strong>Telegram</strong> o tu <strong>ERP mediante API</strong>. Organizamos toda la información al instante para que la encuentres y controles en segundos.
+              Recibí facturas, remitos y recibos por <strong>correo</strong>, <strong>WhatsApp</strong>,{' '}
+              <strong>Telegram</strong>, <strong>impresoras HP</strong> o <strong>API</strong>.{' '}
+              <strong>HelpScan</strong> ordena, valida y deja cada dato listo para buscar o pasar a tu sistema sin perder tiempo descargando ni tipeando.
             </p>
 
             {/* Botones de Acción */}
@@ -108,19 +108,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
               }}
             >
               <button
-                onClick={onOpenTrial}
+                onClick={onRequestDemo}
                 className="btn-primary"
                 style={{ fontSize: '1.02rem', padding: '0.95rem 2rem' }}
               >
-                <span>Prueba Help Scan por 6 días</span>
+                <span>Solicitar Demostración</span>
                 <ArrowRight size={18} />
               </button>
               <a
-                href="#planes"
+                href="#demos"
                 className="btn-secondary"
                 style={{ fontSize: '1.02rem', padding: '0.95rem 1.7rem' }}
               >
-                Ver Planes y Equipos
+                Ver Demos
               </a>
             </div>
 
@@ -136,74 +136,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
               }}
             >
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <CheckCircle2 size={16} color="var(--color-primary)" /> Sin tarjeta de crédito
+                <CheckCircle2 size={16} color="var(--color-primary)" /> Sin cambiar tu sistema actual
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <CheckCircle2 size={16} color="var(--color-primary)" /> Hardware HP + Servicio HelpCopies SRL
+                <CheckCircle2 size={16} color="var(--color-primary)" /> Equipos HP + respaldo HelpCopies SRL
               </span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <CheckCircle2 size={16} color="var(--color-secondary)" /> Puesta en marcha inmediata
+                <CheckCircle2 size={16} color="var(--color-secondary)" /> Demo en vivo con tus comprobantes
               </span>
             </div>
           </div>
 
-          {/* Columna Derecha: Banner Principal preparado para Imagen */}
+          {/* Columna Derecha: Banner Principal ligeramente rectangular dentro del marco con efecto scanner */}
           <div>
             <ImageSlot
-              slotLabel="Banner Principal · Espacio para Imagen"
-              recommendedSize="1200 × 900 px"
-              suggestionText="Aquí podrás colocar una foto de tus equipos HP LaserJet Enterprise, oficina digitalizada o captura del portal Help Scan."
-              minHeight="440px"
+              slotLabel="HelpScan — Recepción automática omnicanal desde Impresora HP, WhatsApp, Correo Electrónico, Telegram y API/ERP"
+              recommendedSize="1024 × 819 px"
+              suggestionText=""
+              imageSrc="/images/BannerPrincipal-square.jpg"
+              minHeight="auto"
+              aspectRatio="5 / 4"
+              imageFit="cover"
               showLaserBeam
-              topLeftBadge={
-                <>
-                  <span className="live-dot" />
-                  <span>Impresoras HP · Email · WhatsApp · Telegram · ERP</span>
-                </>
-              }
-              bottomRightCard={
-                <div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      gap: '0.75rem',
-                      marginBottom: '0.35rem',
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: '0.7rem',
-                        fontWeight: 800,
-                        textTransform: 'uppercase',
-                        color: 'var(--color-primary)',
-                        letterSpacing: '0.04em',
-                      }}
-                    >
-                      ✔ Comprobante Organizado
-                    </span>
-                    <span
-                      style={{
-                        fontSize: '0.68rem',
-                        fontWeight: 700,
-                        padding: '0.1rem 0.45rem',
-                        borderRadius: '9999px',
-                        backgroundColor: 'var(--color-secondary-soft)',
-                        color: 'var(--color-secondary)',
-                      }}
-                    >
-                      Listo para pagar
-                    </span>
-                  </div>
-                  <div style={{ fontSize: '0.84rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                    Factura A · 0001-00048291
-                  </div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '0.15rem' }}>
-                    CUIT: 30-71458921-9 · <strong style={{ color: 'var(--color-primary)' }}>$ 145.200,00</strong>
-                  </div>
-                </div>
-              }
             />
           </div>
         </div>
@@ -237,7 +191,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#f59e0b' }} />
                 <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: 'var(--color-primary)' }} />
                 <span style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginLeft: '0.5rem', fontWeight: 600 }}>
-                  Así agiliza tu día a día · Help Scan
+                  Así se ordena y valida tu operación · HelpScan
                 </span>
               </div>
 
@@ -252,9 +206,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                 }}
               >
                 {[
-                  { id: 'channels', label: '1. Recepción Automática' },
-                  { id: 'extract', label: '2. Lectura sin Tipeo' },
-                  { id: 'filters', label: '3. Búsqueda y ERP' },
+                  { id: 'channels', label: '1. Entra por cualquier canal' },
+                  { id: 'extract', label: '2. Validación sin tipeo' },
+                  { id: 'filters', label: '3. Control y pase a tu ERP' },
                 ].map((tab) => {
                   const active = activeTab === tab.id;
                   return (
@@ -296,15 +250,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                     </div>
                     <div>
                       <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                        Todos tus Canales Conectados
+                        Entra solo, sin importar el canal
                       </h4>
                       <p style={{ fontSize: '0.75rem', color: 'var(--color-primary)', fontWeight: 700 }}>
-                        ● Sin descargas ni archivos perdidos
+                        ● Sin descargar archivos ni perseguir mensajes
                       </p>
                     </div>
                   </div>
                   <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    Escanea un papel en tu impresora HP, recibe una factura por correo, saca una foto por WhatsApp o Telegram, o envía documentos desde tu sistema actual.
+                    Lo que escaneás en tu impresora HP o recibís por mail, WhatsApp, Telegram o API entra directo al mismo circuito, sin que nadie tenga que bajar adjuntos a mano.
                   </p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
                     {[
@@ -349,15 +303,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                     </div>
                     <div>
                       <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                        Archivo Seguro y Centralizado
+                        Control centralizado y sin duplicados
                       </h4>
                       <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                        Acceso privado exclusivo para tu empresa
+                        Sabés qué llegó, qué falta revisar y dónde está
                       </p>
                     </div>
                   </div>
                   <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    Olvídate de buscar comprobantes en distintos correos, teléfonos o carpetas compartidas. Todo queda resguardado en un único portal ordenado y sin duplicados.
+                    Dejá atrás los comprobantes perdidos entre casillas de correo, chats o carpetas compartidas. Todo queda ordenado, validado y al alcance de tu equipo.
                   </p>
                   <div
                     style={{
@@ -370,7 +324,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                       fontWeight: 600,
                     }}
                   >
-                    ✓ Factura recibida, verificada y disponible para tu equipo al instante.
+                    ✓ Comprobante recibido, validado y listo para controlar sin errores de carga.
                   </div>
                 </div>
               </div>
@@ -399,10 +353,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
                     <Cpu size={20} color="var(--color-secondary)" />
                     <span style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)' }}>
-                      Cada dato clave extraído automáticamente, sin cargar nada a mano
+                      Datos clave validados al instante para evitar errores de carga
                     </span>
                   </div>
-                  <span className="badge-pill badge-emerald">Ahorra horas de carga administrativa</span>
+                  <span className="badge-pill badge-emerald">Menos carga repetitiva, cero tipeo</span>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1rem' }}>
                   {[
@@ -522,7 +476,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTrial }) => {
                       color: 'var(--color-secondary)',
                     }}
                   >
-                    Integrable con tu ERP vía API
+                    Listo para pasar a tu sistema habitual
                   </span>
                 </div>
 

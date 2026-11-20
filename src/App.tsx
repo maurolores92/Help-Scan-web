@@ -1,57 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutUs } from './components/AboutUs';
 import { Features } from './components/Features';
-import { Pricing } from './components/Pricing';
+import { DemosSection } from './components/DemosSection';
 import { CtaBanner } from './components/CtaBanner';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { TrialModal } from './components/TrialModal';
+import { DemoRequestModal } from './components/DemoRequestModal';
 import { TechBackgroundCanvas } from './components/TechBackgroundCanvas';
-import { PlanDto } from './types';
 
 export function App() {
-  const [trialOpen, setTrialOpen] = useState<boolean>(false);
-  const [selectedPlan, setSelectedPlan] = useState<PlanDto | null>(null);
+  const [demoModalOpen, setDemoModalOpen] = useState<boolean>(false);
+  const [selectedDemoTitle, setSelectedDemoTitle] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (
-      window.location.hash === '#register' ||
-      window.location.hash === '#registro' ||
-      window.location.pathname === '/register'
-    ) {
-      setTrialOpen(true);
-    }
-  }, []);
-
-  const handleOpenTrial = () => {
-    setSelectedPlan(null);
-    setTrialOpen(true);
-  };
-
-  const handleSelectPlan = (plan: PlanDto) => {
-    setSelectedPlan(plan);
-    setTrialOpen(true);
+  const handleRequestDemo = (demoTitle?: string) => {
+    setSelectedDemoTitle(typeof demoTitle === 'string' ? demoTitle : null);
+    setDemoModalOpen(true);
   };
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', position: 'relative' }}>
       <TechBackgroundCanvas />
-      <Navbar onOpenTrial={handleOpenTrial} />
+      <Navbar onRequestDemo={() => handleRequestDemo()} />
       <main style={{ flexGrow: 1, position: 'relative', zIndex: 1 }}>
-        <Hero onOpenTrial={handleOpenTrial} />
+        <Hero onRequestDemo={() => handleRequestDemo()} />
         <AboutUs />
         <Features />
-        <Pricing onSelectPlan={handleSelectPlan} />
-        <CtaBanner onOpenTrial={handleOpenTrial} />
+        <DemosSection onRequestDemo={handleRequestDemo} />
+        <CtaBanner onRequestDemo={() => handleRequestDemo()} />
         <Contact />
       </main>
       <Footer />
-      <TrialModal
-        isOpen={trialOpen}
-        onClose={() => setTrialOpen(false)}
-        selectedPlan={selectedPlan}
+      <DemoRequestModal
+        isOpen={demoModalOpen}
+        selectedDemo={selectedDemoTitle}
+        onClose={() => {
+          setDemoModalOpen(false);
+          setSelectedDemoTitle(null);
+        }}
       />
     </div>
   );

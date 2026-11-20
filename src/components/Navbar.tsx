@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Sparkles, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenTrial: () => void;
+  onRequestDemo: () => void;
 }
 
 const PORTAL_URL = import.meta.env.VITE_PORTAL_URL || 'http://localhost:3000';
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onRequestDemo }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -23,7 +23,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
     { label: 'Inicio', href: '#inicio' },
     { label: 'HelpCopies SRL', href: '#nosotros' },
     { label: 'Soluciones', href: '#por-que-elegirnos' },
-    { label: 'Planes', href: '#planes' },
+    { label: 'Demos', href: '#demos' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
@@ -52,27 +52,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'flex-start',
-            gap: '0.15rem',
             lineHeight: 1.1,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             <img
               src="/images/HelpScan-plano.png"
-              alt="Help Scan Logo"
+              alt="HelpScan Logo"
               style={{
-                height: '34px',
+                height: '50px',
                 width: 'auto',
                 objectFit: 'contain',
                 display: 'block',
               }}
             />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span
               style={{
                 fontSize: '0.625rem',
                 fontWeight: 700,
                 textTransform: 'uppercase',
-                padding: '0.15rem 0.45rem',
+                padding: '0rem 0.45rem',
                 borderRadius: '9999px',
                 backgroundColor: 'var(--color-primary-soft)',
                 color: 'var(--color-primary-hover)',
@@ -82,10 +83,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
             >
               CLOUD
             </span>
+            <p style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', margin: 0, fontWeight: 500 }}>
+              por <strong style={{ color: 'var(--text-secondary)' }}>HelpCopies SRL</strong>
+            </p>
           </div>
-          <p style={{ fontSize: '0.6875rem', color: 'var(--text-muted)', margin: 0, fontWeight: 500 }}>
-            por <strong style={{ color: 'var(--text-secondary)' }}>HelpCopies SRL</strong>
-          </p>
+
         </a>
 
         {/* Desktop Navigation Links */}
@@ -138,7 +140,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
             <ArrowUpRight size={15} />
           </a>
           <button
-            onClick={onOpenTrial}
+            onClick={onRequestDemo}
             className="btn-primary"
             style={{
               padding: '0.62rem 1.25rem',
@@ -146,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
             }}
           >
             <Sparkles size={15} />
-            <span>Prueba 6 días gratis</span>
+            <span>Solicitar Demostración</span>
           </button>
         </div>
 
@@ -200,13 +202,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial }) => {
           <button
             onClick={() => {
               setMobileMenuOpen(false);
-              onOpenTrial();
+              onRequestDemo();
             }}
             className="btn-primary"
             style={{ width: '100%' }}
           >
             <Sparkles size={16} />
-            <span>Prueba 6 días gratis</span>
+            <span>Solicitar Demostración</span>
           </button>
         </div>
       )}

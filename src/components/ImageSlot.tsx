@@ -7,6 +7,8 @@ interface ImageSlotProps {
   suggestionText: string;
   imageSrc?: string;
   minHeight?: string;
+  aspectRatio?: string;
+  imageFit?: 'cover' | 'contain';
   showLaserBeam?: boolean;
   topLeftBadge?: React.ReactNode;
   bottomRightCard?: React.ReactNode;
@@ -23,7 +25,9 @@ export const ImageSlot: React.FC<ImageSlotProps> = ({
   recommendedSize,
   suggestionText,
   imageSrc,
-  minHeight = '420px',
+  minHeight = '340px',
+  aspectRatio,
+  imageFit = 'cover',
   showLaserBeam = true,
   topLeftBadge,
   bottomRightCard,
@@ -34,6 +38,7 @@ export const ImageSlot: React.FC<ImageSlotProps> = ({
       className="image-slot-backdrop tech-grid-dark"
       style={{
         minHeight,
+        aspectRatio,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -52,7 +57,7 @@ export const ImageSlot: React.FC<ImageSlotProps> = ({
             inset: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
+            objectFit: imageFit,
             zIndex: 0,
           }}
         />
