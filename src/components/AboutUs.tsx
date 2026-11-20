@@ -66,7 +66,6 @@ export const AboutUs: React.FC = () => {
             style={{
               fontSize: 'clamp(1.75rem, 3.6vw, 2.55rem)',
               fontWeight: 900,
-              marginBottom: '1.25rem',
               color: 'var(--text-main)',
               lineHeight: 1.25,
             }}
@@ -86,7 +85,8 @@ export const AboutUs: React.FC = () => {
                 src="/images/Help-Copies-con-fondo-blanco.png"
                 alt="HelpCopies SRL"
                 style={{
-                  height: '3.1em',
+                  height: '3.8em',
+                  marginTop: '0.5rem',
                   width: 'auto',
                   display: 'inline-block',
                   verticalAlign: 'middle',
