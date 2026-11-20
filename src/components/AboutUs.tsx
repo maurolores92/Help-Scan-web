@@ -54,7 +54,7 @@ export const AboutUs: React.FC = () => {
   ];
 
   return (
-    <section id="nosotros" style={{ padding: '6rem 0', position: 'relative' }}>
+    <section id="nosotros" style={{ position: 'relative' }}>
       <div className="container">
         {/* Encabezado de Sección: Bloque 2 - El problema cotidiano */}
         <div style={{ textAlign: 'center', maxWidth: '960px', margin: '0 auto 2.5rem' }}>
