@@ -74,16 +74,9 @@ export const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
-            alignItems: 'flex-start',
-          }}
-        >
+        <div className="contact-grid">
           {/* Contact Details Card */}
-          <div className="light-card" style={{ padding: '2.5rem' }}>
+          <div className="light-card contact-details-card" style={{ padding: '2.5rem' }}>
             <h3 className="heading-font" style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--text-main)' }}>
               Información Comercial y Soporte
             </h3>
@@ -134,7 +127,7 @@ export const Contact: React.FC = () => {
           </div>
 
           {/* Contact Interactive Form */}
-          <div className="light-card" style={{ padding: '2.5rem' }}>
+          <div className="light-card contact-form-card" style={{ padding: '2.5rem' }}>
             {submitted ? (
               <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
                 <div style={{ width: '60px', height: '60px', borderRadius: '50%', backgroundColor: 'rgba(5, 150, 105, 0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>

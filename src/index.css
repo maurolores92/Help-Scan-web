@@ -334,6 +334,13 @@ textarea {
   gap: 1.25rem;
 }
 
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  align-items: flex-start;
+}
+
 .nav-desktop-links {
   display: flex;
   align-items: center;
@@ -357,9 +364,14 @@ textarea {
 }
 
 @media (max-width: 960px) {
-  .hero-split-grid {
+  .hero-split-grid,
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .contact-form-card {
+    order: -1;
   }
 
   .nav-desktop-links,
@@ -369,6 +381,12 @@ textarea {
 
   .nav-mobile-toggle {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-banner-desktop {
+    display: none;
   }
 }
 

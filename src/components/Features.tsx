@@ -103,8 +103,8 @@ export const Features: React.FC = () => {
           </p>
         </div>
 
-        {/* Banner Visual Ancho para Captura del Portal / Ecosistema */}
-        <div style={{ marginBottom: '3.5rem' }}>
+        {/* Banner Visual Ancho para Captura del Portal / Ecosistema (oculto en mobile por proporción panorámica) */}
+        <div className="features-banner-desktop" style={{ marginBottom: '3.5rem' }}>
           <ImageSlot
             slotLabel="Configurado y Operativo · HelpCopies SRL e ScanJet de HP"
             recommendedSize="3392 × 1248 px"
