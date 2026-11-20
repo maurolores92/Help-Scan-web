@@ -14,7 +14,7 @@ export const DemosSection: React.FC<DemosSectionProps> = ({ onRequestDemo }) => 
       desc: 'Mirá cómo entran facturas, remitos y transferencias sin descargar archivos ni copiar nada a mano.',
       slotLabel: 'Demo 01 · Recepción Automática Multicanal',
       recommendedSize: 'Video o Captura 1280 × 720 px',
-      suggestionText: 'Espacio reservado para el video mostrando la entrada automática desde correo, WhatsApp, Telegram e impresoras HP.',
+      suggestionText: 'Espacio reservado para el video mostrando la entrada automática desde correo, WhatsApp, Telegram e ScanJet de HP.',
     },
     {
       badge: 'Video Demo 02 · Próximamente',

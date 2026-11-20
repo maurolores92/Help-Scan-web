@@ -150,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({ onRequestDemo }) => {
           {/* Columna Derecha: Banner Principal ligeramente rectangular dentro del marco con efecto scanner */}
           <div>
             <ImageSlot
-              slotLabel="HelpScan — Recepción automática omnicanal desde Impresora HP, WhatsApp, Correo Electrónico, Telegram y API/ERP"
+              slotLabel="HelpScan — Recepción automática omnicanal desde el dispositivo ScanJet de HP, WhatsApp, Correo Electrónico, Telegram y API/ERP"
               recommendedSize="1024 × 819 px"
               suggestionText=""
               imageSrc="/images/BannerPrincipal-square.jpg"

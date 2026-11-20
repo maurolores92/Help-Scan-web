@@ -96,7 +96,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onRequestDemo }) => {
               zIndex: 2,
             }}
           >
-            Te mostramos en vivo cómo tus facturas, remitos y recibos que entran por correo, WhatsApp, Telegram o impresoras HP quedan validados, ordenados y listos para pasar a tu gestión, con el acompañamiento real de HelpCopies SRL.
+            Te mostramos en vivo cómo tus facturas, remitos y recibos que entran por correo, WhatsApp, Telegram o ScanJet de HP quedan validados, ordenados y listos para pasar a tu gestión, con el acompañamiento real de HelpCopies SRL.
           </p>
 
           <div

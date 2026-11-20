@@ -29,7 +29,7 @@ export const Features: React.FC = () => {
       softBg: 'rgba(2, 132, 199, 0.1)',
       tag: 'Del Papel al Control',
       title: 'Escaneás con un toque y ya queda validado',
-      desc: 'Apoyás facturas o remitos en la impresora HP, tocás un botón y cada comprobante entra directo a tu tablero ordenado, sin carpetas compartidas.',
+      desc: 'Apoyás facturas o remitos en el dispositivo ScanJet de HP, tocás un botón y cada comprobante entra directo a tu tablero ordenado, sin carpetas compartidas.',
     },
     {
       icon: <Mail size={20} color="#10b981" />,
@@ -106,7 +106,7 @@ export const Features: React.FC = () => {
         {/* Banner Visual Ancho para Captura del Portal / Ecosistema */}
         <div style={{ marginBottom: '3.5rem' }}>
           <ImageSlot
-            slotLabel="Configurado y Operativo · HelpCopies SRL e impresoras HP"
+            slotLabel="Configurado y Operativo · HelpCopies SRL e ScanJet de HP"
             recommendedSize="3392 × 1248 px"
             suggestionText=""
             imageSrc="/images/banner-tercero.jpeg"
@@ -117,7 +117,7 @@ export const Features: React.FC = () => {
             topLeftBadge={
               <>
                 <span className="live-dot" />
-                <span>Impresoras HP · Email · WhatsApp · Telegram · ERP</span>
+                <span>ScanJet de HP · Email · WhatsApp · Telegram · ERP</span>
               </>
             }
             bottomRightCard={
